@@ -1,0 +1,30 @@
+{
+  "tag_name": "v0.2.2",
+  "draft": false,
+  "prerelease": false,
+  "html_url": "https://github.com/yinsn/FreeJot-Updates/releases/tag/v0.2.2",
+  "body": "在软件里检查、下载、校验更新并自动重启\n复用本机模型，保留词典、历史和设置\n仅手动检查，不影响离线听写与快速规则整理\n0.2.1 及更早版本需手动安装本次更新，以后可在软件内更新",
+  "assets": [
+    {
+      "id": 561603211,
+      "name": "FreeJot-Update-0.2.2-AppleSilicon.zip",
+      "size": 26667012,
+      "digest": "sha256:769d796a9320cdc7b4dde6d7b455acf2ee3b97a758c7ad4e0fae1cfce73d0af1",
+      "browser_download_url": "https://github.com/yinsn/FreeJot-Updates/releases/download/v0.2.2/FreeJot-Update-0.2.2-AppleSilicon.zip"
+    },
+    {
+      "id": 561603207,
+      "name": "SHA256SUMS",
+      "size": 187,
+      "digest": "sha256:cd65a4d4557e95611090739a59c1bdc1f1d62fdfad4856eed0e0d701b04bae29",
+      "browser_download_url": "https://github.com/yinsn/FreeJot-Updates/releases/download/v0.2.2/SHA256SUMS"
+    },
+    {
+      "id": 561603206,
+      "name": "UPDATE.zh-CN.txt",
+      "size": 1905,
+      "digest": "sha256:725fd23078aa7c1ff1c4df69baf8225b80e477f8b3135da3224aca3391192a0b",
+      "browser_download_url": "https://github.com/yinsn/FreeJot-Updates/releases/download/v0.2.2/UPDATE.zh-CN.txt"
+    }
+  ]
+}
