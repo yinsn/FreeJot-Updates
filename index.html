@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>释手 · 更新下载</title>
+<style>
+  :root{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;color:#1f2937;background:#f4f7fc;line-height:1.7}
+  *{box-sizing:border-box}body{margin:0;padding:clamp(24px,6vw,72px) 20px}main{max-width:680px;margin:auto}
+  .brand{font-size:15px;color:#637087;margin-bottom:24px}h1{font-size:clamp(30px,6vw,42px);line-height:1.25;margin:0 0 16px;letter-spacing:-.025em}
+  .intro{font-size:17px;color:#637087;margin-bottom:30px}.card{padding:28px;border:1px solid #e1e7f0;border-radius:20px;background:#fff;margin:20px 0}
+  h2{font-size:19px;margin:0 0 12px}p{margin:10px 0}.button{display:inline-block;background:#2864e8;color:white;text-decoration:none;border-radius:9px;padding:12px 22px;font-weight:600;margin:12px 0}
+  a{color:#2864e8;text-underline-offset:3px}a:focus-visible{outline:3px solid #a3c5ff;outline-offset:4px}.muted{font-size:13px;color:#637087}ol{padding-left:22px}li{margin:9px 0}.foot{margin:24px 0}
+  @media(prefers-color-scheme:dark){:root{color:#e7edf6;background:#171c26}.card{background:#212938;border-color:#344055}.intro,.muted,.brand{color:#b4c0d2}a{color:#a2bfff}.button{color:white}}
+</style>
+<main>
+  <div class="brand">释手 / FreeJot</div>
+  <h1>更新释手，继续说出想法</h1>
+  <p class="intro">给已经安装完整离线版的 Mac。只下载程序更新，复用本机模型，保留词典、历史和设置。</p>
+  <section class="card" aria-labelledby="download-title">
+    <h2 id="download-title">获取最新更新</h2>
+    <p id="version">Apple Silicon · macOS 14 及以上</p>
+    <a class="button" id="download" href="https://github.com/yinsn/FreeJot-Updates/releases/latest">查看最新更新包</a>
+    <p class="muted" id="size">无需 GitHub 账号。更新包由 GitHub Releases 提供。</p>
+    <p class="muted">这是更新包，不包含首次安装所需的语音与整理模型。</p>
+  </section>
+  <section class="card" aria-labelledby="steps-title">
+    <h2 id="steps-title">0.2.1 或更早版本：手动更新这一次</h2>
+    <ol>
+      <li>下载并解压更新包，退出释手。</li>
+      <li>打开 <strong>FreeJotUpdater.app（释手更新器）</strong>，选择原先安装的完整离线 <strong>FreeJot.app</strong>，点击「开始更新」。</li>
+      <li>完成后打开释手，在「设置 → 关于释手」核对版本。</li>
+    </ol>
+    <p>此后打开<strong>「设置 → 关于释手 → 检查更新」</strong>，点击「下载并更新」，软件会完成下载、校验并重启。菜单栏也有「检查更新」入口。</p>
+    <p class="muted">建议预留约 7 GB 空间，更新成功会保留旧应用备份。若首次打开被系统拦截，请确认来源后按「系统设置 → 隐私与安全性」提示允许打开。</p>
+  </section>
+  <p class="muted foot">检查与下载由你主动发起。语音识别和文字整理仍在本机完成，更新服务不会收到录音、词典或转写内容。</p>
+  <p class="muted"><a href="https://github.com/yinsn/FreeJot-Updates/releases">全部版本与校验文件</a></p>
+</main>
+<script>
+(async()=>{
+  try{
+    const response=await fetch('./app-update.json',{cache:'no-store'});
+    if(!response.ok)return;
+    const release=await response.json();
+    if(release.draft||release.prerelease||!/^v\d+\.\d+\.\d+$/.test(release.tag_name))return;
+    const version=release.tag_name.slice(1);
+    const asset=release.assets.find(x=>x.name===`FreeJot-Update-${version}-AppleSilicon.zip`);
+    const expected=`https://github.com/yinsn/FreeJot-Updates/releases/download/${release.tag_name}/${asset?.name}`;
+    if(!asset||asset.browser_download_url!==expected||!Number.isSafeInteger(asset.size)||asset.size<=0)return;
+    document.getElementById('version').textContent=`版本 ${version} · Apple Silicon · macOS 14 及以上`;
+    document.getElementById('download').textContent=`下载 ${version} 更新包`;
+    document.getElementById('download').href=expected;
+    document.getElementById('size').textContent=`约 ${(asset.size/1000000).toFixed(1)} MB · 无需 GitHub 账号`;
+  }catch{ /* The release link remains usable when metadata is unavailable. */ }
+})();
+</script>
+</html>
