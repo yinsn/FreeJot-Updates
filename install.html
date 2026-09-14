@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN" xml:lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>释手 · 完整安装指南</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="install.css" />
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#释手-freejot新-mac-完整安装指南"
+id="toc-释手-freejot新-mac-完整安装指南">释手 / FreeJot：新 Mac
+完整安装指南</a>
+<ul>
+<li><a href="#先判断这台-mac-应走哪条路径"
+id="toc-先判断这台-mac-应走哪条路径">1. 先判断这台 Mac
+应走哪条路径</a></li>
+<li><a href="#确认系统空间与已有安装" id="toc-确认系统空间与已有安装">2.
+确认系统、空间与已有安装</a></li>
+<li><a href="#a.-从发布页下载全部四个文件"
+id="toc-a.-从发布页下载全部四个文件">3A.
+从发布页下载全部四个文件</a></li>
+<li><a href="#b.-已通过传输取得完整-zip"
+id="toc-b.-已通过传输取得完整-zip">3B. 已通过传输取得完整 ZIP</a></li>
+<li><a href="#安装完整应用" id="toc-安装完整应用">4.
+安装完整应用</a></li>
+<li><a href="#校验全部模型和应用签名" id="toc-校验全部模型和应用签名">5.
+校验全部模型和应用签名</a></li>
+<li><a href="#手动升级一次再使用应用内更新"
+id="toc-手动升级一次再使用应用内更新">6.
+手动升级一次，再使用应用内更新</a></li>
+<li><a href="#系统权限和实际验收" id="toc-系统权限和实际验收">7.
+系统权限和实际验收</a></li>
+<li><a href="#常见故障" id="toc-常见故障">8. 常见故障</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="释手-freejot新-mac-完整安装指南">释手 / FreeJot：新 Mac
+完整安装指南</h1>
+<p>适用于用户和安装 agent。核验日期：2026-09-14。系统要求：Apple
+Silicon（M 系列）Mac、macOS 14 或更新版本。首次准备至少留出 20 GB
+可用空间；应用和两个模型约占 6.4 GB。运行和离线安装只需 Mac
+自带工具，无需 Python、Xcode 或 API Key。</p>
+<p><strong>新机器先装包含模型的完整离线版 0.2.0，再手动更新到
+0.2.3，之后可在应用内检查更新。</strong> 约 27 MB 的
+<code>FreeJot-Update-*.zip</code>
+只更新程序，不能单独完成首次安装。完整包压缩后为 5,367,175,477
+字节，下载后不必额外寻找 tokenizer 或模型。</p>
+<ul>
+<li><a href="https://yinsn.github.io/FreeJot-Updates/">下载首页</a></li>
+<li><a
+href="https://yinsn.github.io/FreeJot-Updates/install.json">安装清单（精确文件名、大小、SHA256、路径）</a></li>
+<li><a
+href="https://yinsn.github.io/FreeJot-Updates/app-update.json">最新更新描述</a></li>
+<li><a href="https://yinsn.github.io/FreeJot-Updates/INSTALL.md">本文
+Markdown 原文（可直接交给 agent）</a></li>
+</ul>
+<h2 id="先判断这台-mac-应走哪条路径">1. 先判断这台 Mac 应走哪条路径</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>目标机器状态</th>
+<th>操作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>没装过释手，或只有更新器 / 不带模型的应用</td>
+<td>第 2 节确认环境，第 3 节获取完整离线包</td>
+</tr>
+<tr>
+<td>已有完整离线 0.2.0 / 0.2.1</td>
+<td>先用第 5 节校验，再走第 6 节手动升级</td>
+</tr>
+<tr>
+<td>已有完整离线 0.2.2 或更高版本</td>
+<td>校验后在「设置 → 关于释手 → 检查更新」升级</td>
+</tr>
+<tr>
+<td>提示 tokenizer.json 缺失、模型不完整或校验失败</td>
+<td>按第 8 节排查，不能把失败当作“尚需下载一个小文件”</td>
+</tr>
+</tbody>
+</table>
+<p><strong>下载权限是安装前提：</strong>完整包目前在私有仓库 <a
+href="https://github.com/yinsn/FreeJot/releases/tag/v0.2.0">yinsn/FreeJot
+的 v0.2.0 发布页</a>。需要有仓库访问权限的 GitHub
+账号；公开文档和更新包均无需登录。完整包链接返回 404 / 403
+时，先核对账号权限。没有权限的 agent
+应明确报告“无法取得完整安装包”，请用户提供访问权限或完整
+ZIP，再继续。不能用源码 ZIP、更新 ZIP 或开发版替代。</p>
+<p>另一条有效路径是由拥有者通过隔空投送、移动硬盘或用户授权的文件传输方式提供同一份完整
+ZIP，按第 3B 节校验。不要在对话中索取或输出令牌、密码。</p>
+<h2 id="确认系统空间与已有安装">2. 确认系统、空间与已有安装</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/usr/bin/uname</span> <span class="at">-m</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">/usr/sbin/sysctl</span> <span class="at">-n</span> hw.optional.arm64</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">/usr/bin/sw_vers</span> <span class="at">-productVersion</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">/bin/df</span> <span class="at">-Pk</span> <span class="st">&quot;</span><span class="va">$HOME</span><span class="st">/Downloads&quot;</span> /Applications</span></code></pre></div>
+<p>原生终端应显示 <code>arm64</code>；若终端运行于
+Rosetta，<code>uname -m</code> 可能显示 <code>x86_64</code>，此时以
+<code>hw.optional.arm64 = 1</code> 确认硬件。Intel Mac 和 macOS 13
+或更早版本不支持这份安装包。下载、合并与解压所在卷需要至少
+20,000,000,000 字节可用空间；若应用安装在另一块卷，该卷也需有约 7 GB
+空间。</p>
+<p>检查 <code>/Applications/FreeJot.app</code>
+和用户选择的安装位置。已有应用时先确认它的版本与模型完整性，保留原应用，不直接覆盖或删除。历史、词典和偏好位于用户资源库，安装过程不应清理它们。若已有完整的较新版本，不要重新安装
+0.2.0。</p>
+<h2 id="a.-从发布页下载全部四个文件">3A. 从发布页下载全部四个文件</h2>
+<p>打开 <a
+href="https://github.com/yinsn/FreeJot/releases/tag/v0.2.0">v0.2.0
+完整包发布页</a>，下载以下四项，放到同一个新文件夹。前三项是同一个 ZIP
+的字节分卷，<strong>不能分别解压</strong>。</p>
+<table>
+<colgroup>
+<col style="width: 42%" />
+<col style="width: 57%" />
+</colgroup>
+<thead>
+<tr>
+<th>文件名</th>
+<th style="text-align: right;">字节数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FreeJot-Offline-AppleSilicon-0.2.0-20260913-153743.zip.part01</code></td>
+<td style="text-align: right;">1,900,000,000</td>
+</tr>
+<tr>
+<td><code>FreeJot-Offline-AppleSilicon-0.2.0-20260913-153743.zip.part02</code></td>
+<td style="text-align: right;">1,900,000,000</td>
+</tr>
+<tr>
+<td><code>FreeJot-Offline-AppleSilicon-0.2.0-20260913-153743.zip.part03</code></td>
+<td style="text-align: right;">1,567,175,477</td>
+</tr>
+<tr>
+<td><code>FreeJot-Prepare-0.2.0-20260913-153743.zip</code></td>
+<td style="text-align: right;">4,526</td>
+</tr>
+</tbody>
+</table>
+<p>如果机器已有 GitHub CLI 且已登录有权限的账号，agent
+可以使用下面的路径；没有 CLI
+时用已登录浏览器下载即可，不需要为运行释手安装 CLI。</p>
+<p>以下命令在同一个终端会话执行；<code>task_downloads</code>
+是本次工作文件夹，不是应用安装位置。目录已有文件时先核验它们，不使用覆盖下载选项。</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="va">task_downloads</span><span class="op">=</span><span class="st">&quot;</span><span class="va">$HOME</span><span class="st">/Downloads/FreeJot-FirstInstall&quot;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">/bin/mkdir</span> <span class="at">-p</span> <span class="st">&quot;</span><span class="va">$task_downloads</span><span class="st">&quot;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> release download v0.2.0 <span class="at">--repo</span> yinsn/FreeJot <span class="at">--dir</span> <span class="st">&quot;</span><span class="va">$task_downloads</span><span class="st">&quot;</span> <span class="dt">\</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">--pattern</span> <span class="st">&#39;FreeJot-Offline-AppleSilicon-0.2.0-20260913-153743.zip.part01&#39;</span> <span class="dt">\</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">--pattern</span> <span class="st">&#39;FreeJot-Offline-AppleSilicon-0.2.0-20260913-153743.zip.part02&#39;</span> <span class="dt">\</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">--pattern</span> <span class="st">&#39;FreeJot-Offline-AppleSilicon-0.2.0-20260913-153743.zip.part03&#39;</span> <span class="dt">\</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">--pattern</span> <span class="st">&#39;FreeJot-Prepare-0.2.0-20260913-153743.zip&#39;</span></span></code></pre></div>
+<p>先取得公开校验清单，再校验全部四项。只有命令成功且四项均为
+<code>OK</code> 才继续。</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/usr/bin/curl</span> <span class="at">-fL</span> <span class="at">--retry</span> 3 <span class="dt">\</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  https://yinsn.github.io/FreeJot-Updates/install-sha256.txt <span class="dt">\</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">-o</span> <span class="st">&quot;</span><span class="va">$task_downloads</span><span class="st">/install-sha256.txt&quot;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="bu">cd</span> <span class="st">&quot;</span><span class="va">$task_downloads</span><span class="st">&quot;</span> <span class="kw">&amp;&amp;</span> <span class="ex">/usr/bin/shasum</span> <span class="at">-a</span> 256 <span class="at">-c</span> install-sha256.txt<span class="kw">)</span></span></code></pre></div>
+<p>解压安装助手，然后运行它。助手会再次校验分卷、按正确顺序合并、核验完整
+ZIP、使用 macOS 自带 <code>ditto</code>
+解压并校验应用签名、版本与构建号。<code>--no-open</code> 只关闭 Finder
+自动展示，适合 agent；它仍输出完整进度。</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/usr/bin/ditto</span> <span class="at">-x</span> <span class="at">-k</span> <span class="dt">\</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;</span><span class="va">$task_downloads</span><span class="st">/FreeJot-Prepare-0.2.0-20260913-153743.zip&quot;</span> <span class="dt">\</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;</span><span class="va">$task_downloads</span><span class="st">&quot;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">/bin/zsh</span> <span class="st">&quot;</span><span class="va">$task_downloads</span><span class="st">/FreeJot-Prepare-0.2.0-20260913-153743/双击准备安装.command&quot;</span> <span class="at">--no-open</span></span></code></pre></div>
+<p>人工操作时也可双击助手
+ZIP，再双击其中的「双击准备安装.command」。助手位置可以在分卷旁边的子文件夹内；不要更改分卷名称。准备完成后的应用路径是：</p>
+<pre class="text"><code>&lt;下载文件夹&gt;/FreeJot-Install-0.2.0-20260913-153743/FreeJot-Offline-AppleSilicon/FreeJot.app</code></pre>
+<p>助手返回非零或未显示“准备完成”时，先处理报错，不开始安装。已经校验过的完整
+ZIP 会保留，助手可重新运行；不要删除分卷制造“已完成”。继续第 4 节。</p>
+<h2 id="b.-已通过传输取得完整-zip">3B. 已通过传输取得完整 ZIP</h2>
+<p>适用于 <code>FreeJot-Offline-0.2.0-AppleSilicon.zip</code> 或合并后的
+<code>FreeJot-Offline-AppleSilicon-0.2.0-20260913-153743.zip</code>，两者内容相同。</p>
+<ul>
+<li>精确大小：<code>5367175477</code> 字节。</li>
+<li>SHA256：<code>33348ad46b363a081049a9363e1621efa1a53776ff3cb6ff48348dfcaf3d1df4</code>。</li>
+</ul>
+<p>用 <code>/usr/bin/stat -f %z &lt;ZIP绝对路径&gt;</code> 与
+<code>/usr/bin/shasum -a 256 &lt;ZIP绝对路径&gt;</code>
+检查，必须同时匹配。然后用
+<code>/usr/bin/ditto -x -k &lt;ZIP绝对路径&gt; &lt;新的解压文件夹&gt;</code>
+解压。路径包含空格时加双引号。</p>
+<p>这个大文件采用 macOS 打包方式，统一使用 <code>ditto</code>
+或系统归档实用工具；不要因为其他 ZIP
+库报大文件偏移错误就重建归档或跳过校验。解压结果内应有
+<code>FreeJot-Offline-AppleSilicon/FreeJot.app</code>、安装说明和第三方声明。</p>
+<h2 id="安装完整应用">4. 安装完整应用</h2>
+<p>将刚才得到的整个 <code>FreeJot.app</code>
+拖入「应用程序」，保留应用内部的模型目录。模型位于
+<code>Contents/Resources/Models/</code>，并不在下载文件夹旁，也不能通过只复制
+<code>Contents/MacOS/FreeJot</code> 完成安装。</p>
+<p>agent 可使用 <code>ditto</code> 复制整个应用。下面仅适用于第 3A
+节路径，且目标不存在的首次安装；已有目标时命令会停止。不要把旧的完整应用与新包合并覆盖。</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="va">task_source</span><span class="op">=</span><span class="st">&quot;</span><span class="va">$task_downloads</span><span class="st">/FreeJot-Install-0.2.0-20260913-153743/FreeJot-Offline-AppleSilicon/FreeJot.app&quot;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="va">task_target</span><span class="op">=</span><span class="st">&#39;/Applications/FreeJot.app&#39;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">[</span> <span class="ot">-e</span> <span class="st">&quot;</span><span class="va">$task_target</span><span class="st">&quot;</span> <span class="bu">]</span> <span class="kw">||</span> <span class="bu">[</span> <span class="ot">-L</span> <span class="st">&quot;</span><span class="va">$task_target</span><span class="st">&quot;</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">echo</span> <span class="st">&#39;目标已有应用，请先核验版本和模型，选择升级或保留旧版后再安装。&#39;</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="ex">/usr/bin/ditto</span> <span class="at">--rsrc</span> <span class="at">--extattr</span> <span class="st">&quot;</span><span class="va">$task_source</span><span class="st">&quot;</span> <span class="st">&quot;</span><span class="va">$task_target</span><span class="st">&quot;</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span></code></pre></div>
+<p>如 <code>/Applications</code> 不可写，可使用用户同意的
+<code>~/Applications/FreeJot.app</code>；随后所有校验、升级、启动都使用这个真实路径。不要从
+ZIP、磁盘映像或系统临时转置目录运行后再更新。</p>
+<h2 id="校验全部模型和应用签名">5. 校验全部模型和应用签名</h2>
+<p>下载以下两份文本到同一文件夹。<code>verify-install.sh</code>
+只读文件，不下载模型、不修改或安装应用。</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/usr/bin/curl</span> <span class="at">-fL</span> <span class="at">--retry</span> 3 <span class="dt">\</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  https://yinsn.github.io/FreeJot-Updates/verify-install.sh <span class="dt">\</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">-o</span> <span class="st">&quot;</span><span class="va">$task_downloads</span><span class="st">/verify-install.sh&quot;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="ex">/usr/bin/curl</span> <span class="at">-fL</span> <span class="at">--retry</span> 3 <span class="dt">\</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  https://yinsn.github.io/FreeJot-Updates/model-sha256.txt <span class="dt">\</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">-o</span> <span class="st">&quot;</span><span class="va">$task_downloads</span><span class="st">/model-sha256.txt&quot;</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="ex">/bin/zsh</span> <span class="st">&quot;</span><span class="va">$task_downloads</span><span class="st">/verify-install.sh&quot;</span> <span class="st">&#39;/Applications/FreeJot.app&#39;</span></span></code></pre></div>
+<p>若走第 3B 节，请先将 <code>task_downloads</code>
+指向这两份文本的存放文件夹。自定义安装位置要相应替换最后一个参数。</p>
+<p>校验器检查应用标识、架构、离线标记、签名、模型清单及全部 20
+个模型文件的 SHA256，包括 <strong>4,760,339 字节的语音分词器
+<code>tokenizer.json</code></strong>。这套模型校验适用于完整 0.2.0
+及复用同一组模型的
+0.2.1–0.2.3；未来更换模型时应使用对应发布的配套清单。</p>
+<p>新装基准版应显示版本 <code>0.2.0</code>、构建号
+<code>20260913-153743</code>。只有校验成功才继续；文件校验不代表麦克风、快捷键和自动输入已验证。</p>
+<h2 id="手动升级一次再使用应用内更新">6.
+手动升级一次，再使用应用内更新</h2>
+<p>完整 0.2.0
+没有应用内更新入口，需要运行一次公开的轻量更新器。已核验可直接从完整
+0.2.0 升级到 <strong>0.2.3 / 20260914-003359</strong>，无需先安装 0.2.1
+或 0.2.2。</p>
+<ol type="1">
+<li>从 <a href="https://yinsn.github.io/FreeJot-Updates/">公开更新页</a>
+下载更新包。agent 应先读取 <code>app-update.json</code>，选取与
+<code>tag_name</code> 版本一致的唯一
+<code>FreeJot-Update-X.Y.Z-AppleSilicon.zip</code> 附件，按其中的
+<code>size</code> 与 <code>digest</code>
+校验。拒绝未发布、预发布或不匹配的附件；不要仅以
+<code>releases/latest</code> 推测包名。</li>
+<li>当前已核验包为 <a
+href="https://github.com/yinsn/FreeJot-Updates/releases/download/v0.2.3/FreeJot-Update-0.2.3-AppleSilicon.zip">FreeJot-Update-0.2.3-AppleSilicon.zip</a>，大小
+<code>26697875</code> 字节，SHA256 为
+<code>e60ecd4e2b26767c080d08d2e4ea5c8499643615d7c3ef22aed63ced343d1046</code>。未来
+feed 版本更高时，使用那次发布的元数据，不沿用这里的摘要。</li>
+<li>用 <code>ditto -x -k</code>
+解压到新的更新文件夹，退出所有释手实例。不要强制终止正在听写的应用。</li>
+<li>打开解压出的
+<code>FreeJotUpdater.app（释手更新器）</code>，选择刚才安装且校验通过的完整
+<code>FreeJot.app</code>，点「开始更新」。建议安装卷预留约 7
+GB。更新器会复用模型，核验并重建完整应用，再替换旧版，保留旧应用备份。</li>
+<li>完成后打开安装目录中的新版，在「设置 →
+关于释手」核对版本与构建号，并重跑第 5 节校验。版本 0.2.2
+及以后可直接「检查更新 → 下载并更新」。</li>
+</ol>
+<p>有命令执行能力的 agent 可调用更新器已有的
+CLI。先确认解压结果里唯一的更新器绝对路径，把它赋给
+<code>task_updater</code>；不要使用 <code>--resources</code>
+覆盖内置资源。<code>--check</code> 成功、释手已退出后才执行
+<code>--apply</code>：</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># task_updater = 已核实的 FreeJotUpdater.app 绝对路径</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">/usr/bin/codesign</span> <span class="at">--verify</span> <span class="at">--deep</span> <span class="at">--strict</span> <span class="st">&quot;</span><span class="va">$task_updater</span><span class="st">&quot;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;</span><span class="va">$task_updater</span><span class="st">/Contents/MacOS/FreeJotUpdater&quot;</span> <span class="at">--check</span> <span class="st">&#39;/Applications/FreeJot.app&#39;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;</span><span class="va">$task_updater</span><span class="st">/Contents/MacOS/FreeJotUpdater&quot;</span> <span class="at">--apply</span> <span class="st">&#39;/Applications/FreeJot.app&#39;</span></span></code></pre></div>
+<p>各命令必须成功才进入下一步。更新器报模型不匹配时保留原应用并排查，不更改模型来绕过检查。</p>
+<h2 id="系统权限和实际验收">7. 系统权限和实际验收</h2>
+<p>当前应用为自签名，未经过 Apple Developer ID
+公证。首次打开被系统阻止时，由用户在确认来源后按「系统设置 →
+隐私与安全性」提示允许打开；参考 <a
+href="https://support.apple.com/102445">Apple 官方说明</a>。不要关闭
+Gatekeeper、批量移除隔离属性或重签应用来绕过检查。</p>
+<p>每台 Mac
+都需要单独为释手授予「麦克风」「辅助功能」「输入监视」权限。这些系统确认由用户完成；agent
+可以引导，不能声称已代替用户授权。授权后退出并重新打开同一份应用。</p>
+<p>在设置里选择实际可用的快捷键。默认是 F16；MacBook 键盘没有 F16
+时可选右
+Option。等语音识别模型就绪后，在备忘录等可编辑文本区放好光标，按一次开始录音，说一句话，再按一次结束，确认文字出现并自动输入。不要一直按住按键。首次打开“保护第一个字”默认关闭，按用户需要设置。</p>
+<p>完成条件必须逐项满足：</p>
+<ul>
+<li>实际安装路径指向完整
+<code>FreeJot.app</code>，签名、模型和分词器检查通过。</li>
+<li>关于页版本与选用更新包一致；后续检查更新没有尚待安装的目标版本。</li>
+<li>麦克风、辅助功能、输入监视权限已由用户确认。</li>
+<li>在目标 Mac
+上实际录音、转写和自动输入成功；同一时刻仅运行一份应用。</li>
+</ul>
+<p>若只有前两项通过，应报告“文件安装与校验完成，等待系统授权和实际听写验收”，不能报告安装已经完全可用。向用户交付安装路径、版本/构建号、文件校验结果和仍需用户完成的具体步骤。确认成功后再由用户决定是否删除下载分卷、完整
+ZIP 和旧版备份。</p>
+<h2 id="常见故障">8. 常见故障</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>现象</th>
+<th>含义与处理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>缺少语音分词器 <code>tokenizer.json</code>，约 4.76 MB</td>
+<td>完整应用内应有该文件。核对选用的是否是完整包、四项下载是否校验成功、复制的是否为整个应用。重新取得并完整解压，不要从模型站点猜测下载地址、生成占位
+JSON 或写入已签名应用</td>
+</tr>
+<tr>
+<td>只下载了约 27 MB</td>
+<td>取得的是更新包，返回第 3 节获取约 5.37 GB 的完整包</td>
+</tr>
+<tr>
+<td>完整包页面 404 / 下载 403</td>
+<td>私有仓库访问权限不足或未登录。取得权限或由拥有者提供完整
+ZIP；不是模型文件不存在</td>
+</tr>
+<tr>
+<td>分卷缺失、大小不对或 SHA256 失败</td>
+<td>四项文件放在同一目录、保持原名，仅重新取得失败项；全部通过后再运行助手</td>
+</tr>
+<tr>
+<td>应用签名校验失败</td>
+<td>解压、复制或内容发生变化。重新用完整原始包和 <code>ditto</code>
+准备，不修改包内资源或重新签名</td>
+</tr>
+<tr>
+<td>文件校验通过但没有声音</td>
+<td>检查麦克风权限及系统输入设备</td>
+</tr>
+<tr>
+<td>快捷键无效</td>
+<td>检查当前快捷键、输入监视权限；默认 F16 可能不在当前键盘上</td>
+</tr>
+<tr>
+<td>已转写但没有自动输入</td>
+<td>检查辅助功能权限、目标文本区焦点，并重新打开释手</td>
+</tr>
+<tr>
+<td>无法更新或模型不匹配</td>
+<td>选中真实安装目录中的完整应用，先退出正在运行的实例，检查可用空间及第
+5 节结果</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

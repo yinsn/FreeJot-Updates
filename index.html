@@ -3,7 +3,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<title>释手 · 更新下载</title>
+<meta name="description" content="释手 FreeJot 完整安装与更新。新 Mac 安装步骤、模型校验、下载权限和可供 agent 读取的安装文档。">
+<link rel="alternate" type="text/markdown" title="完整安装指南" href="INSTALL.md">
+<link rel="alternate" type="application/json" title="完整安装清单" href="install.json">
+<title>释手 · 安装与更新</title>
 <style>
   :root{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;color:#1f2937;background:#f4f7fc;line-height:1.7}
   *{box-sizing:border-box}body{margin:0;padding:clamp(24px,6vw,72px) 20px}main{max-width:680px;margin:auto}
@@ -11,18 +14,42 @@
   .intro{font-size:17px;color:#637087;margin-bottom:30px}.card{padding:28px;border:1px solid #e1e7f0;border-radius:20px;background:#fff;margin:20px 0}
   h2{font-size:19px;margin:0 0 12px}p{margin:10px 0}.button{display:inline-block;background:#2864e8;color:white;text-decoration:none;border-radius:9px;padding:12px 22px;font-weight:600;margin:12px 0}
   a{color:#2864e8;text-underline-offset:3px}a:focus-visible{outline:3px solid #a3c5ff;outline-offset:4px}.muted{font-size:13px;color:#637087}ol{padding-left:22px}li{margin:9px 0}.foot{margin:24px 0}
+  nav{display:flex;flex-wrap:wrap;gap:12px 20px;margin:20px 0 28px}.badge{display:inline-block;padding:3px 9px;border-radius:6px;background:#eaf0ff;color:#2451a5;font-size:12px}.notice{border-left:3px solid #d29a22;padding-left:14px}code{overflow-wrap:anywhere;font-size:.9em}
   @media(prefers-color-scheme:dark){:root{color:#e7edf6;background:#171c26}.card{background:#212938;border-color:#344055}.intro,.muted,.brand{color:#b4c0d2}a{color:#a2bfff}.button{color:white}}
 </style>
 <main>
   <div class="brand">释手 / FreeJot</div>
-  <h1>更新释手，继续说出想法</h1>
-  <p class="intro">给已经安装完整离线版的 Mac。只下载程序更新，复用本机模型，保留词典、历史和设置。</p>
+  <h1>装好释手，开口就能输入</h1>
+  <p class="intro">Apple Silicon · macOS 14 及以上。新 Mac 从完整安装开始，已有完整离线版可直接更新。</p>
+  <nav aria-label="安装导航"><a href="#first-install">首次安装</a><a href="#download-title">已有版本更新</a><a href="install.html">完整安装指南</a><a href="#agent">交给 agent 安装</a></nav>
+  <section class="card" id="first-install" aria-labelledby="install-title">
+    <span class="badge">新 Mac / 模型缺失</span>
+    <h2 id="install-title">先安装完整离线版</h2>
+    <p>完整包包含程序、语音识别和文字整理模型，下载约 <strong>5.37 GB</strong>，安装后约 6.4 GB。准备时请留出 <strong>20 GB</strong> 空间。</p>
+    <p class="notice">完整包目前在私有仓库，需要有访问权限的 GitHub 账号。没有权限时，请向拥有者取得完整 ZIP。公开的更新包无法代替首次安装。</p>
+    <a class="button" href="install.html">查看完整安装步骤</a>
+    <p><a href="https://github.com/yinsn/FreeJot/releases/tag/v0.2.0">获取 0.2.0 完整包（需仓库权限）</a></p>
+    <ol>
+      <li>下载 <strong>安装助手 ZIP + 全部 3 个分卷</strong>，放在同一文件夹。</li>
+      <li>解压助手，运行「双击准备安装.command」，等待校验、合并和解压完成。</li>
+      <li>把完整的 <strong>FreeJot.app</strong> 拖进「应用程序」，按指南校验全部模型。</li>
+      <li>用下方轻量更新器升级一次，再授予系统权限并试一次听写。</li>
+    </ol>
+    <p class="muted">若提示缺少 tokenizer.json（约 4.76 MB），请按指南检查完整包和复制结果。这个文件已包含在完整应用中。</p>
+  </section>
   <section class="card" aria-labelledby="download-title">
-    <h2 id="download-title">获取最新更新</h2>
+    <span class="badge">已有完整离线版</span>
+    <h2 id="download-title">只更新程序，复用本机模型</h2>
     <p id="version">Apple Silicon · macOS 14 及以上</p>
     <a class="button" id="download" href="https://github.com/yinsn/FreeJot-Updates/releases/latest">查看最新更新包</a>
     <p class="muted" id="size">无需 GitHub 账号。更新包由 GitHub Releases 提供。</p>
-    <p class="muted">这是更新包，不包含首次安装所需的语音与整理模型。</p>
+    <p class="muted">这是约 27 MB 的更新包。新机器请先完成上方完整安装；更新会保留本机词典、历史和设置。</p>
+  </section>
+  <section class="card" id="agent" aria-labelledby="agent-title">
+    <h2 id="agent-title">交给 agent 安装</h2>
+    <p>把这份<a href="INSTALL.md">安装指南（Markdown）</a>的链接交给 agent。文档包括下载权限、精确文件名、校验与安装命令、首次升级、故障处理和完成条件。</p>
+    <p><a href="install.json">安装清单 JSON</a> · <a href="llms.txt">agent 读取入口</a> · <a href="verify-install.sh">只读校验脚本</a> · <a href="model-sha256.txt">配套模型校验清单</a></p>
+    <p class="muted">文件安装通过后，系统权限仍需你在 Mac 上确认。只有实际录音、转写和自动输入成功，才算安装可用。</p>
   </section>
   <section class="card" aria-labelledby="steps-title">
     <h2 id="steps-title">0.2.1 或更早版本：手动更新这一次</h2>
