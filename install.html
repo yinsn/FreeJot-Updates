@@ -116,9 +116,9 @@ id="toc-b.-已通过传输取得完整-zip">3B. 已通过传输取得完整 ZIP<
 安装完整应用</a></li>
 <li><a href="#校验全部模型和应用签名" id="toc-校验全部模型和应用签名">5.
 校验全部模型和应用签名</a></li>
-<li><a href="#手动升级一次再使用应用内更新"
-id="toc-手动升级一次再使用应用内更新">6.
-手动升级一次，再使用应用内更新</a></li>
+<li><a href="#安装后检查更新旧版用户如何升级"
+id="toc-安装后检查更新旧版用户如何升级">6.
+安装后检查更新；旧版用户如何升级</a></li>
 <li><a href="#系统权限和实际验收" id="toc-系统权限和实际验收">7.
 系统权限和实际验收</a></li>
 <li><a href="#常见故障" id="toc-常见故障">8. 常见故障</a></li>
@@ -131,11 +131,11 @@ id="toc-手动升级一次再使用应用内更新">6.
 Silicon（M 系列）Mac、macOS 14 或更新版本。首次准备至少留出 20 GB
 可用空间；应用和两个模型约占 6.4 GB。运行和离线安装只需 Mac
 自带工具，无需 Python、Xcode 或 API Key。</p>
-<p><strong>新机器先装包含模型的完整离线版 0.2.0，再手动更新到
-0.2.3，之后可在应用内检查更新。</strong> 约 27 MB 的
-<code>FreeJot-Update-*.zip</code>
-只更新程序，不能单独完成首次安装。完整包压缩后为 5,367,175,477
-字节，下载后不必额外寻找 tokenizer 或模型。</p>
+<p><strong>直接安装包含全部模型的完整离线版 0.2.3，无需 GitHub
+账号，也无需先装旧版。</strong> 首页提供安装助手和全部三个分卷，合计约
+5.37 GB。约 27 MB 的 <code>FreeJot-Update-*.zip</code>
+用于已有完整离线版的升级，不能单独完成首次安装。完整包已带齐 tokenizer
+和两个模型。</p>
 <ul>
 <li><a href="https://yinsn.github.io/FreeJot-Updates/">下载首页</a></li>
 <li><a
@@ -164,7 +164,7 @@ Markdown 原文（可直接交给 agent）</a></li>
 </tr>
 <tr>
 <td>已有完整离线 0.2.0 / 0.2.1</td>
-<td>先用第 5 节校验，再走第 6 节手动升级</td>
+<td>第 5 节校验现有模型，再走第 6 节手动升级</td>
 </tr>
 <tr>
 <td>已有完整离线 0.2.2 或更高版本</td>
@@ -176,15 +176,18 @@ Markdown 原文（可直接交给 agent）</a></li>
 </tr>
 </tbody>
 </table>
-<p><strong>下载权限是安装前提：</strong>完整包目前在私有仓库 <a
-href="https://github.com/yinsn/FreeJot/releases/tag/v0.2.0">yinsn/FreeJot
-的 v0.2.0 发布页</a>。需要有仓库访问权限的 GitHub
-账号；公开文档和更新包均无需登录。完整包链接返回 404 / 403
-时，先核对账号权限。没有权限的 agent
-应明确报告“无法取得完整安装包”，请用户提供访问权限或完整
-ZIP，再继续。不能用源码 ZIP、更新 ZIP 或开发版替代。</p>
-<p>另一条有效路径是由拥有者通过隔空投送、移动硬盘或用户授权的文件传输方式提供同一份完整
-ZIP，按第 3B 节校验。不要在对话中索取或输出令牌、密码。</p>
+<p><strong>完整安装入口：<a
+href="https://yinsn.github.io/FreeJot-Updates/">GitHub Pages
+下载首页</a>。</strong> 完整包、助手、校验清单和更新包均托管在公开的
+<code>yinsn/FreeJot-Updates</code>，可直接下载，不需要登录、访问令牌或源码仓库权限。大文件由同一项目的
+GitHub Releases 提供，页面上有全部四项直链。</p>
+<p>完整包发布页：https://github.com/yinsn/FreeJot-Updates/releases/tag/v0.2.3
+。请使用本指南和 <code>install.json</code>
+明确列出的四项附件；发布页同时提供轻量更新包，不要选错。</p>
+<p>也可由拥有者通过隔空投送或移动硬盘提供同一份完整 ZIP，按第 3B
+节校验。公开下载出现 404 / 403
+时，检查网页中的最新链接及网络连接，不要索取 GitHub
+令牌或改用私有源码仓库。</p>
 <h2 id="确认系统空间与已有安装">2. 确认系统、空间与已有安装</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/usr/bin/uname</span> <span class="at">-m</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">/usr/sbin/sysctl</span> <span class="at">-n</span> hw.optional.arm64</span>
@@ -197,13 +200,11 @@ Rosetta，<code>uname -m</code> 可能显示 <code>x86_64</code>，此时以
 20,000,000,000 字节可用空间；若应用安装在另一块卷，该卷也需有约 7 GB
 空间。</p>
 <p>检查 <code>/Applications/FreeJot.app</code>
-和用户选择的安装位置。已有应用时先确认它的版本与模型完整性，保留原应用，不直接覆盖或删除。历史、词典和偏好位于用户资源库，安装过程不应清理它们。若已有完整的较新版本，不要重新安装
-0.2.0。</p>
+和用户选择的安装位置。已有应用时先确认它的版本与模型完整性，保留原应用，不直接覆盖或删除。历史、词典和偏好位于用户资源库，安装过程不应清理它们。若已有完整的相同或较新版本，先校验，不重复安装旧包。</p>
 <h2 id="a.-从发布页下载全部四个文件">3A. 从发布页下载全部四个文件</h2>
-<p>打开 <a
-href="https://github.com/yinsn/FreeJot/releases/tag/v0.2.0">v0.2.0
-完整包发布页</a>，下载以下四项，放到同一个新文件夹。前三项是同一个 ZIP
-的字节分卷，<strong>不能分别解压</strong>。</p>
+<p>打开<a
+href="https://yinsn.github.io/FreeJot-Updates/#first-install">下载首页</a>，直接下载以下四项，放到同一个新文件夹。前三项是同一个
+ZIP 的字节分卷，<strong>不能分别解压</strong>。</p>
 <table>
 <colgroup>
 <col style="width: 42%" />
@@ -217,35 +218,39 @@ href="https://github.com/yinsn/FreeJot/releases/tag/v0.2.0">v0.2.0
 </thead>
 <tbody>
 <tr>
-<td><code>FreeJot-Offline-AppleSilicon-0.2.0-20260913-153743.zip.part01</code></td>
+<td><code>FreeJot-Offline-AppleSilicon-0.2.3-20260914-003359.zip.part01</code></td>
 <td style="text-align: right;">1,900,000,000</td>
 </tr>
 <tr>
-<td><code>FreeJot-Offline-AppleSilicon-0.2.0-20260913-153743.zip.part02</code></td>
+<td><code>FreeJot-Offline-AppleSilicon-0.2.3-20260914-003359.zip.part02</code></td>
 <td style="text-align: right;">1,900,000,000</td>
 </tr>
 <tr>
-<td><code>FreeJot-Offline-AppleSilicon-0.2.0-20260913-153743.zip.part03</code></td>
-<td style="text-align: right;">1,567,175,477</td>
+<td><code>FreeJot-Offline-AppleSilicon-0.2.3-20260914-003359.zip.part03</code></td>
+<td style="text-align: right;">1,567,322,762</td>
 </tr>
 <tr>
-<td><code>FreeJot-Prepare-0.2.0-20260913-153743.zip</code></td>
-<td style="text-align: right;">4,526</td>
+<td><code>FreeJot-Prepare-0.2.3-20260914-003359.zip</code></td>
+<td style="text-align: right;">4,533</td>
 </tr>
 </tbody>
 </table>
-<p>如果机器已有 GitHub CLI 且已登录有权限的账号，agent
-可以使用下面的路径；没有 CLI
-时用已登录浏览器下载即可，不需要为运行释手安装 CLI。</p>
-<p>以下命令在同一个终端会话执行；<code>task_downloads</code>
-是本次工作文件夹，不是应用安装位置。目录已有文件时先核验它们，不使用覆盖下载选项。</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="va">task_downloads</span><span class="op">=</span><span class="st">&quot;</span><span class="va">$HOME</span><span class="st">/Downloads/FreeJot-FirstInstall&quot;</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">/bin/mkdir</span> <span class="at">-p</span> <span class="st">&quot;</span><span class="va">$task_downloads</span><span class="st">&quot;</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> release download v0.2.0 <span class="at">--repo</span> yinsn/FreeJot <span class="at">--dir</span> <span class="st">&quot;</span><span class="va">$task_downloads</span><span class="st">&quot;</span> <span class="dt">\</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">--pattern</span> <span class="st">&#39;FreeJot-Offline-AppleSilicon-0.2.0-20260913-153743.zip.part01&#39;</span> <span class="dt">\</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">--pattern</span> <span class="st">&#39;FreeJot-Offline-AppleSilicon-0.2.0-20260913-153743.zip.part02&#39;</span> <span class="dt">\</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">--pattern</span> <span class="st">&#39;FreeJot-Offline-AppleSilicon-0.2.0-20260913-153743.zip.part03&#39;</span> <span class="dt">\</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">--pattern</span> <span class="st">&#39;FreeJot-Prepare-0.2.0-20260913-153743.zip&#39;</span></span></code></pre></div>
+<p>agent 可直接使用 Mac 自带的 <code>curl</code>
+下载。以下命令在同一个终端会话执行，创建本次专用的新文件夹，不依赖
+GitHub CLI
+或任何登录状态。请保留输出的文件夹路径，以便后续步骤复用。</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="va">task_downloads</span><span class="op">=</span><span class="st">&quot;</span><span class="va">$(</span><span class="ex">/usr/bin/mktemp</span> <span class="at">-d</span> <span class="st">&quot;</span><span class="va">$HOME</span><span class="st">/Downloads/FreeJot-Install.XXXXXXXX&quot;</span><span class="va">)</span><span class="st">&quot;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$task_downloads</span><span class="st">&quot;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="va">task_base</span><span class="op">=</span><span class="st">&#39;https://github.com/yinsn/FreeJot-Updates/releases/download/v0.2.3&#39;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> task_name <span class="kw">in</span> <span class="dt">\</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">&#39;FreeJot-Offline-AppleSilicon-0.2.3-20260914-003359.zip.part01&#39;</span> <span class="dt">\</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">&#39;FreeJot-Offline-AppleSilicon-0.2.3-20260914-003359.zip.part02&#39;</span> <span class="dt">\</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">&#39;FreeJot-Offline-AppleSilicon-0.2.3-20260914-003359.zip.part03&#39;</span> <span class="dt">\</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">&#39;FreeJot-Prepare-0.2.3-20260914-003359.zip&#39;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="ex">/usr/bin/curl</span> <span class="at">-fL</span> <span class="at">--retry</span> 3 <span class="st">&quot;</span><span class="va">$task_base</span><span class="st">/</span><span class="va">$task_name</span><span class="st">&quot;</span> <span class="at">-o</span> <span class="st">&quot;</span><span class="va">$task_downloads</span><span class="st">/</span><span class="va">$task_name</span><span class="st">&quot;</span> <span class="kw">||</span> <span class="cf">break</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code></pre></div>
+<p>下载失败时保留已完成的文件，先解决网络或链接问题再补齐。必须确认四个文件存在且下方校验全部通过，才可继续。不要把失败响应保存成安装包后运行。</p>
 <p>先取得公开校验清单，再校验全部四项。只有命令成功且四项均为
 <code>OK</code> 才继续。</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/usr/bin/curl</span> <span class="at">-fL</span> <span class="at">--retry</span> 3 <span class="dt">\</span></span>
@@ -257,20 +262,20 @@ ZIP、使用 macOS 自带 <code>ditto</code>
 解压并校验应用签名、版本与构建号。<code>--no-open</code> 只关闭 Finder
 自动展示，适合 agent；它仍输出完整进度。</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/usr/bin/ditto</span> <span class="at">-x</span> <span class="at">-k</span> <span class="dt">\</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;</span><span class="va">$task_downloads</span><span class="st">/FreeJot-Prepare-0.2.0-20260913-153743.zip&quot;</span> <span class="dt">\</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;</span><span class="va">$task_downloads</span><span class="st">/FreeJot-Prepare-0.2.3-20260914-003359.zip&quot;</span> <span class="dt">\</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;</span><span class="va">$task_downloads</span><span class="st">&quot;</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">/bin/zsh</span> <span class="st">&quot;</span><span class="va">$task_downloads</span><span class="st">/FreeJot-Prepare-0.2.0-20260913-153743/双击准备安装.command&quot;</span> <span class="at">--no-open</span></span></code></pre></div>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">/bin/zsh</span> <span class="st">&quot;</span><span class="va">$task_downloads</span><span class="st">/FreeJot-Prepare-0.2.3-20260914-003359/双击准备安装.command&quot;</span> <span class="at">--no-open</span></span></code></pre></div>
 <p>人工操作时也可双击助手
 ZIP，再双击其中的「双击准备安装.command」。助手位置可以在分卷旁边的子文件夹内；不要更改分卷名称。准备完成后的应用路径是：</p>
-<pre class="text"><code>&lt;下载文件夹&gt;/FreeJot-Install-0.2.0-20260913-153743/FreeJot-Offline-AppleSilicon/FreeJot.app</code></pre>
+<pre class="text"><code>&lt;下载文件夹&gt;/FreeJot-Install-0.2.3-20260914-003359/FreeJot-Offline-AppleSilicon/FreeJot.app</code></pre>
 <p>助手返回非零或未显示“准备完成”时，先处理报错，不开始安装。已经校验过的完整
 ZIP 会保留，助手可重新运行；不要删除分卷制造“已完成”。继续第 4 节。</p>
 <h2 id="b.-已通过传输取得完整-zip">3B. 已通过传输取得完整 ZIP</h2>
-<p>适用于 <code>FreeJot-Offline-0.2.0-AppleSilicon.zip</code> 或合并后的
-<code>FreeJot-Offline-AppleSilicon-0.2.0-20260913-153743.zip</code>，两者内容相同。</p>
+<p>适用于 <code>FreeJot-Offline-0.2.3-AppleSilicon.zip</code> 或合并后的
+<code>FreeJot-Offline-AppleSilicon-0.2.3-20260914-003359.zip</code>，两者内容相同。</p>
 <ul>
-<li>精确大小：<code>5367175477</code> 字节。</li>
-<li>SHA256：<code>33348ad46b363a081049a9363e1621efa1a53776ff3cb6ff48348dfcaf3d1df4</code>。</li>
+<li>精确大小：<code>5367322762</code> 字节。</li>
+<li>SHA256：<code>ba395de2a676f354795396799c670a59b71fe8300243d13c8993b6917fc01ac7</code>。</li>
 </ul>
 <p>用 <code>/usr/bin/stat -f %z &lt;ZIP绝对路径&gt;</code> 与
 <code>/usr/bin/shasum -a 256 &lt;ZIP绝对路径&gt;</code>
@@ -288,7 +293,7 @@ ZIP 会保留，助手可重新运行；不要删除分卷制造“已完成”�
 <code>Contents/MacOS/FreeJot</code> 完成安装。</p>
 <p>agent 可使用 <code>ditto</code> 复制整个应用。下面仅适用于第 3A
 节路径，且目标不存在的首次安装；已有目标时命令会停止。不要把旧的完整应用与新包合并覆盖。</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="va">task_source</span><span class="op">=</span><span class="st">&quot;</span><span class="va">$task_downloads</span><span class="st">/FreeJot-Install-0.2.0-20260913-153743/FreeJot-Offline-AppleSilicon/FreeJot.app&quot;</span></span>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="va">task_source</span><span class="op">=</span><span class="st">&quot;</span><span class="va">$task_downloads</span><span class="st">/FreeJot-Install-0.2.3-20260914-003359/FreeJot-Offline-AppleSilicon/FreeJot.app&quot;</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="va">task_target</span><span class="op">=</span><span class="st">&#39;/Applications/FreeJot.app&#39;</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">[</span> <span class="ot">-e</span> <span class="st">&quot;</span><span class="va">$task_target</span><span class="st">&quot;</span> <span class="bu">]</span> <span class="kw">||</span> <span class="bu">[</span> <span class="ot">-L</span> <span class="st">&quot;</span><span class="va">$task_target</span><span class="st">&quot;</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">echo</span> <span class="st">&#39;目标已有应用，请先核验版本和模型，选择升级或保留旧版后再安装。&#39;</span></span>
@@ -315,14 +320,16 @@ ZIP、磁盘映像或系统临时转置目录运行后再更新。</p>
 <code>tokenizer.json</code></strong>。这套模型校验适用于完整 0.2.0
 及复用同一组模型的
 0.2.1–0.2.3；未来更换模型时应使用对应发布的配套清单。</p>
-<p>新装基准版应显示版本 <code>0.2.0</code>、构建号
-<code>20260913-153743</code>。只有校验成功才继续；文件校验不代表麦克风、快捷键和自动输入已验证。</p>
-<h2 id="手动升级一次再使用应用内更新">6.
-手动升级一次，再使用应用内更新</h2>
-<p>完整 0.2.0
-没有应用内更新入口，需要运行一次公开的轻量更新器。已核验可直接从完整
-0.2.0 升级到 <strong>0.2.3 / 20260914-003359</strong>，无需先安装 0.2.1
-或 0.2.2。</p>
+<p>新装完整包应显示版本 <code>0.2.3</code>、构建号
+<code>20260914-003359</code>。只有校验成功才继续；文件校验不代表麦克风、快捷键和自动输入已验证。</p>
+<h2 id="安装后检查更新旧版用户如何升级">6.
+安装后检查更新；旧版用户如何升级</h2>
+<p><strong>刚装好完整 0.2.3：</strong>直接打开「设置 → 关于释手 →
+检查更新」。若已是最新版本，进入第 7
+节权限与实际验收，无需下载同版本更新包。未来发现更高版本时可在应用内下载并更新。</p>
+<p><strong>原来已装完整 0.2.0 /
+0.2.1：</strong>这些旧版没有应用内更新入口，按下面步骤手动升级一次，可直接到
+0.2.3，无需逐版安装。</p>
 <ol type="1">
 <li>从 <a href="https://yinsn.github.io/FreeJot-Updates/">公开更新页</a>
 下载更新包。agent 应先读取 <code>app-update.json</code>，选取与
@@ -403,8 +410,8 @@ JSON 或写入已签名应用</td>
 </tr>
 <tr>
 <td>完整包页面 404 / 下载 403</td>
-<td>私有仓库访问权限不足或未登录。取得权限或由拥有者提供完整
-ZIP；不是模型文件不存在</td>
+<td>当前完整包公开，无需登录。重新核对首页和 install.json
+的直链，检查网络或 GitHub 服务状态；不要索取令牌或转到私有源码仓库</td>
 </tr>
 <tr>
 <td>分卷缺失、大小不对或 SHA256 失败</td>

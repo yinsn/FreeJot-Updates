@@ -2,11 +2,11 @@
 
 下载首页：https://yinsn.github.io/FreeJot-Updates/
 
-本仓库公开提供下载页面、安装文档、校验信息和程序更新包。
+本仓库公开提供完整安装包、程序更新包、下载页面、安装文档和校验信息，无需 GitHub 账号。
 
 ## 新 Mac 首次安装
 
-先读 [完整安装指南](https://yinsn.github.io/FreeJot-Updates/INSTALL.md) 或 [网页版](https://yinsn.github.io/FreeJot-Updates/install.html)。完整 0.2.0 安装包包含两个模型，约 5.37 GB，需先安装再更新到当前版本。完整包仍在私有 `yinsn/FreeJot` 仓库，需要有权限的 GitHub 账号；也可由拥有者提供相同的完整 ZIP。访问失败时按指南处理，不要使用轻量更新包代替。
+先读 [完整安装指南](https://yinsn.github.io/FreeJot-Updates/INSTALL.md) 或 [网页版](https://yinsn.github.io/FreeJot-Updates/install.html)。完整 0.2.3 安装包包含程序和两个模型，约 5.37 GB。直接从首页下载安装助手和全部三个分卷，按指南校验、合并和安装，不必先装旧版。四个附件均在本公开仓库的 v0.2.3 Release，可直接下载，无需登录或源码仓库权限。
 
 agent 入口：[llms.txt](https://yinsn.github.io/FreeJot-Updates/llms.txt) · [install.json](https://yinsn.github.io/FreeJot-Updates/install.json)。文档有分卷、完整 ZIP、全部模型和应用签名的验证方法，包括 `tokenizer.json` 缺失处理。只有系统权限确认且实际听写成功，才能报告安装可用。
 

@@ -2,7 +2,7 @@
 
 适用于用户和安装 agent。核验日期：2026-09-14。系统要求：Apple Silicon（M 系列）Mac、macOS 14 或更新版本。首次准备至少留出 20 GB 可用空间；应用和两个模型约占 6.4 GB。运行和离线安装只需 Mac 自带工具，无需 Python、Xcode 或 API Key。
 
-**新机器先装包含模型的完整离线版 0.2.0，再手动更新到 0.2.3，之后可在应用内检查更新。** 约 27 MB 的 `FreeJot-Update-*.zip` 只更新程序，不能单独完成首次安装。完整包压缩后为 5,367,175,477 字节，下载后不必额外寻找 tokenizer 或模型。
+**直接安装包含全部模型的完整离线版 0.2.3，无需 GitHub 账号，也无需先装旧版。** 首页提供安装助手和全部三个分卷，合计约 5.37 GB。约 27 MB 的 `FreeJot-Update-*.zip` 用于已有完整离线版的升级，不能单独完成首次安装。完整包已带齐 tokenizer 和两个模型。
 
 - [下载首页](https://yinsn.github.io/FreeJot-Updates/)
 - [安装清单（精确文件名、大小、SHA256、路径）](https://yinsn.github.io/FreeJot-Updates/install.json)
@@ -14,13 +14,15 @@
 | 目标机器状态 | 操作 |
 | --- | --- |
 | 没装过释手，或只有更新器 / 不带模型的应用 | 第 2 节确认环境，第 3 节获取完整离线包 |
-| 已有完整离线 0.2.0 / 0.2.1 | 先用第 5 节校验，再走第 6 节手动升级 |
+| 已有完整离线 0.2.0 / 0.2.1 | 第 5 节校验现有模型，再走第 6 节手动升级 |
 | 已有完整离线 0.2.2 或更高版本 | 校验后在「设置 → 关于释手 → 检查更新」升级 |
 | 提示 tokenizer.json 缺失、模型不完整或校验失败 | 按第 8 节排查，不能把失败当作“尚需下载一个小文件” |
 
-**下载权限是安装前提：**完整包目前在私有仓库 [yinsn/FreeJot 的 v0.2.0 发布页](https://github.com/yinsn/FreeJot/releases/tag/v0.2.0)。需要有仓库访问权限的 GitHub 账号；公开文档和更新包均无需登录。完整包链接返回 404 / 403 时，先核对账号权限。没有权限的 agent 应明确报告“无法取得完整安装包”，请用户提供访问权限或完整 ZIP，再继续。不能用源码 ZIP、更新 ZIP 或开发版替代。
+**完整安装入口：[GitHub Pages 下载首页](https://yinsn.github.io/FreeJot-Updates/)。** 完整包、助手、校验清单和更新包均托管在公开的 `yinsn/FreeJot-Updates`，可直接下载，不需要登录、访问令牌或源码仓库权限。大文件由同一项目的 GitHub Releases 提供，页面上有全部四项直链。
 
-另一条有效路径是由拥有者通过隔空投送、移动硬盘或用户授权的文件传输方式提供同一份完整 ZIP，按第 3B 节校验。不要在对话中索取或输出令牌、密码。
+完整包发布页：https://github.com/yinsn/FreeJot-Updates/releases/tag/v0.2.3 。请使用本指南和 `install.json` 明确列出的四项附件；发布页同时提供轻量更新包，不要选错。
+
+也可由拥有者通过隔空投送或移动硬盘提供同一份完整 ZIP，按第 3B 节校验。公开下载出现 404 / 403 时，检查网页中的最新链接及网络连接，不要索取 GitHub 令牌或改用私有源码仓库。
 
 ## 2. 确认系统、空间与已有安装
 
@@ -33,32 +35,36 @@
 
 原生终端应显示 `arm64`；若终端运行于 Rosetta，`uname -m` 可能显示 `x86_64`，此时以 `hw.optional.arm64 = 1` 确认硬件。Intel Mac 和 macOS 13 或更早版本不支持这份安装包。下载、合并与解压所在卷需要至少 20,000,000,000 字节可用空间；若应用安装在另一块卷，该卷也需有约 7 GB 空间。
 
-检查 `/Applications/FreeJot.app` 和用户选择的安装位置。已有应用时先确认它的版本与模型完整性，保留原应用，不直接覆盖或删除。历史、词典和偏好位于用户资源库，安装过程不应清理它们。若已有完整的较新版本，不要重新安装 0.2.0。
+检查 `/Applications/FreeJot.app` 和用户选择的安装位置。已有应用时先确认它的版本与模型完整性，保留原应用，不直接覆盖或删除。历史、词典和偏好位于用户资源库，安装过程不应清理它们。若已有完整的相同或较新版本，先校验，不重复安装旧包。
 
 ## 3A. 从发布页下载全部四个文件
 
-打开 [v0.2.0 完整包发布页](https://github.com/yinsn/FreeJot/releases/tag/v0.2.0)，下载以下四项，放到同一个新文件夹。前三项是同一个 ZIP 的字节分卷，**不能分别解压**。
+打开[下载首页](https://yinsn.github.io/FreeJot-Updates/#first-install)，直接下载以下四项，放到同一个新文件夹。前三项是同一个 ZIP 的字节分卷，**不能分别解压**。
 
 | 文件名 | 字节数 |
 | --- | ---: |
-| `FreeJot-Offline-AppleSilicon-0.2.0-20260913-153743.zip.part01` | 1,900,000,000 |
-| `FreeJot-Offline-AppleSilicon-0.2.0-20260913-153743.zip.part02` | 1,900,000,000 |
-| `FreeJot-Offline-AppleSilicon-0.2.0-20260913-153743.zip.part03` | 1,567,175,477 |
-| `FreeJot-Prepare-0.2.0-20260913-153743.zip` | 4,526 |
+| `FreeJot-Offline-AppleSilicon-0.2.3-20260914-003359.zip.part01` | 1,900,000,000 |
+| `FreeJot-Offline-AppleSilicon-0.2.3-20260914-003359.zip.part02` | 1,900,000,000 |
+| `FreeJot-Offline-AppleSilicon-0.2.3-20260914-003359.zip.part03` | 1,567,322,762 |
+| `FreeJot-Prepare-0.2.3-20260914-003359.zip` | 4,533 |
 
-如果机器已有 GitHub CLI 且已登录有权限的账号，agent 可以使用下面的路径；没有 CLI 时用已登录浏览器下载即可，不需要为运行释手安装 CLI。
-
-以下命令在同一个终端会话执行；`task_downloads` 是本次工作文件夹，不是应用安装位置。目录已有文件时先核验它们，不使用覆盖下载选项。
+agent 可直接使用 Mac 自带的 `curl` 下载。以下命令在同一个终端会话执行，创建本次专用的新文件夹，不依赖 GitHub CLI 或任何登录状态。请保留输出的文件夹路径，以便后续步骤复用。
 
 ```sh
-task_downloads="$HOME/Downloads/FreeJot-FirstInstall"
-/bin/mkdir -p "$task_downloads"
-gh release download v0.2.0 --repo yinsn/FreeJot --dir "$task_downloads" \
-  --pattern 'FreeJot-Offline-AppleSilicon-0.2.0-20260913-153743.zip.part01' \
-  --pattern 'FreeJot-Offline-AppleSilicon-0.2.0-20260913-153743.zip.part02' \
-  --pattern 'FreeJot-Offline-AppleSilicon-0.2.0-20260913-153743.zip.part03' \
-  --pattern 'FreeJot-Prepare-0.2.0-20260913-153743.zip'
+task_downloads="$(/usr/bin/mktemp -d "$HOME/Downloads/FreeJot-Install.XXXXXXXX")"
+echo "$task_downloads"
+task_base='https://github.com/yinsn/FreeJot-Updates/releases/download/v0.2.3'
+for task_name in \
+  'FreeJot-Offline-AppleSilicon-0.2.3-20260914-003359.zip.part01' \
+  'FreeJot-Offline-AppleSilicon-0.2.3-20260914-003359.zip.part02' \
+  'FreeJot-Offline-AppleSilicon-0.2.3-20260914-003359.zip.part03' \
+  'FreeJot-Prepare-0.2.3-20260914-003359.zip'
+do
+  /usr/bin/curl -fL --retry 3 "$task_base/$task_name" -o "$task_downloads/$task_name" || break
+done
 ```
+
+下载失败时保留已完成的文件，先解决网络或链接问题再补齐。必须确认四个文件存在且下方校验全部通过，才可继续。不要把失败响应保存成安装包后运行。
 
 先取得公开校验清单，再校验全部四项。只有命令成功且四项均为 `OK` 才继续。
 
@@ -73,25 +79,25 @@ gh release download v0.2.0 --repo yinsn/FreeJot --dir "$task_downloads" \
 
 ```sh
 /usr/bin/ditto -x -k \
-  "$task_downloads/FreeJot-Prepare-0.2.0-20260913-153743.zip" \
+  "$task_downloads/FreeJot-Prepare-0.2.3-20260914-003359.zip" \
   "$task_downloads"
-/bin/zsh "$task_downloads/FreeJot-Prepare-0.2.0-20260913-153743/双击准备安装.command" --no-open
+/bin/zsh "$task_downloads/FreeJot-Prepare-0.2.3-20260914-003359/双击准备安装.command" --no-open
 ```
 
 人工操作时也可双击助手 ZIP，再双击其中的「双击准备安装.command」。助手位置可以在分卷旁边的子文件夹内；不要更改分卷名称。准备完成后的应用路径是：
 
 ```text
-<下载文件夹>/FreeJot-Install-0.2.0-20260913-153743/FreeJot-Offline-AppleSilicon/FreeJot.app
+<下载文件夹>/FreeJot-Install-0.2.3-20260914-003359/FreeJot-Offline-AppleSilicon/FreeJot.app
 ```
 
 助手返回非零或未显示“准备完成”时，先处理报错，不开始安装。已经校验过的完整 ZIP 会保留，助手可重新运行；不要删除分卷制造“已完成”。继续第 4 节。
 
 ## 3B. 已通过传输取得完整 ZIP
 
-适用于 `FreeJot-Offline-0.2.0-AppleSilicon.zip` 或合并后的 `FreeJot-Offline-AppleSilicon-0.2.0-20260913-153743.zip`，两者内容相同。
+适用于 `FreeJot-Offline-0.2.3-AppleSilicon.zip` 或合并后的 `FreeJot-Offline-AppleSilicon-0.2.3-20260914-003359.zip`，两者内容相同。
 
-- 精确大小：`5367175477` 字节。
-- SHA256：`33348ad46b363a081049a9363e1621efa1a53776ff3cb6ff48348dfcaf3d1df4`。
+- 精确大小：`5367322762` 字节。
+- SHA256：`ba395de2a676f354795396799c670a59b71fe8300243d13c8993b6917fc01ac7`。
 
 用 `/usr/bin/stat -f %z <ZIP绝对路径>` 与 `/usr/bin/shasum -a 256 <ZIP绝对路径>` 检查，必须同时匹配。然后用 `/usr/bin/ditto -x -k <ZIP绝对路径> <新的解压文件夹>` 解压。路径包含空格时加双引号。
 
@@ -104,7 +110,7 @@ gh release download v0.2.0 --repo yinsn/FreeJot --dir "$task_downloads" \
 agent 可使用 `ditto` 复制整个应用。下面仅适用于第 3A 节路径，且目标不存在的首次安装；已有目标时命令会停止。不要把旧的完整应用与新包合并覆盖。
 
 ```sh
-task_source="$task_downloads/FreeJot-Install-0.2.0-20260913-153743/FreeJot-Offline-AppleSilicon/FreeJot.app"
+task_source="$task_downloads/FreeJot-Install-0.2.3-20260914-003359/FreeJot-Offline-AppleSilicon/FreeJot.app"
 task_target='/Applications/FreeJot.app'
 if [ -e "$task_target" ] || [ -L "$task_target" ]; then
   echo '目标已有应用，请先核验版本和模型，选择升级或保留旧版后再安装。'
@@ -133,11 +139,13 @@ fi
 
 校验器检查应用标识、架构、离线标记、签名、模型清单及全部 20 个模型文件的 SHA256，包括 **4,760,339 字节的语音分词器 `tokenizer.json`**。这套模型校验适用于完整 0.2.0 及复用同一组模型的 0.2.1–0.2.3；未来更换模型时应使用对应发布的配套清单。
 
-新装基准版应显示版本 `0.2.0`、构建号 `20260913-153743`。只有校验成功才继续；文件校验不代表麦克风、快捷键和自动输入已验证。
+新装完整包应显示版本 `0.2.3`、构建号 `20260914-003359`。只有校验成功才继续；文件校验不代表麦克风、快捷键和自动输入已验证。
 
-## 6. 手动升级一次，再使用应用内更新
+## 6. 安装后检查更新；旧版用户如何升级
 
-完整 0.2.0 没有应用内更新入口，需要运行一次公开的轻量更新器。已核验可直接从完整 0.2.0 升级到 **0.2.3 / 20260914-003359**，无需先安装 0.2.1 或 0.2.2。
+**刚装好完整 0.2.3：**直接打开「设置 → 关于释手 → 检查更新」。若已是最新版本，进入第 7 节权限与实际验收，无需下载同版本更新包。未来发现更高版本时可在应用内下载并更新。
+
+**原来已装完整 0.2.0 / 0.2.1：**这些旧版没有应用内更新入口，按下面步骤手动升级一次，可直接到 0.2.3，无需逐版安装。
 
 1. 从 [公开更新页](https://yinsn.github.io/FreeJot-Updates/) 下载更新包。agent 应先读取 `app-update.json`，选取与 `tag_name` 版本一致的唯一 `FreeJot-Update-X.Y.Z-AppleSilicon.zip` 附件，按其中的 `size` 与 `digest` 校验。拒绝未发布、预发布或不匹配的附件；不要仅以 `releases/latest` 推测包名。
 2. 当前已核验包为 [FreeJot-Update-0.2.3-AppleSilicon.zip](https://github.com/yinsn/FreeJot-Updates/releases/download/v0.2.3/FreeJot-Update-0.2.3-AppleSilicon.zip)，大小 `26697875` 字节，SHA256 为 `e60ecd4e2b26767c080d08d2e4ea5c8499643615d7c3ef22aed63ced343d1046`。未来 feed 版本更高时，使用那次发布的元数据，不沿用这里的摘要。
@@ -179,7 +187,7 @@ fi
 | --- | --- |
 | 缺少语音分词器 `tokenizer.json`，约 4.76 MB | 完整应用内应有该文件。核对选用的是否是完整包、四项下载是否校验成功、复制的是否为整个应用。重新取得并完整解压，不要从模型站点猜测下载地址、生成占位 JSON 或写入已签名应用 |
 | 只下载了约 27 MB | 取得的是更新包，返回第 3 节获取约 5.37 GB 的完整包 |
-| 完整包页面 404 / 下载 403 | 私有仓库访问权限不足或未登录。取得权限或由拥有者提供完整 ZIP；不是模型文件不存在 |
+| 完整包页面 404 / 下载 403 | 当前完整包公开，无需登录。重新核对首页和 install.json 的直链，检查网络或 GitHub 服务状态；不要索取令牌或转到私有源码仓库 |
 | 分卷缺失、大小不对或 SHA256 失败 | 四项文件放在同一目录、保持原名，仅重新取得失败项；全部通过后再运行助手 |
 | 应用签名校验失败 | 解压、复制或内容发生变化。重新用完整原始包和 `ditto` 准备，不修改包内资源或重新签名 |
 | 文件校验通过但没有声音 | 检查麦克风权限及系统输入设备 |

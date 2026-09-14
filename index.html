@@ -3,7 +3,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<meta name="description" content="释手 FreeJot 完整安装与更新。新 Mac 安装步骤、模型校验、下载权限和可供 agent 读取的安装文档。">
+<meta name="description" content="释手 FreeJot 完整安装与更新。新 Mac 免登录完整下载、安装步骤、模型校验和可供 agent 读取的安装文档。">
 <link rel="alternate" type="text/markdown" title="完整安装指南" href="INSTALL.md">
 <link rel="alternate" type="application/json" title="完整安装清单" href="install.json">
 <title>释手 · 安装与更新</title>
@@ -26,14 +26,20 @@
     <span class="badge">新 Mac / 模型缺失</span>
     <h2 id="install-title">先安装完整离线版</h2>
     <p>完整包包含程序、语音识别和文字整理模型，下载约 <strong>5.37 GB</strong>，安装后约 6.4 GB。准备时请留出 <strong>20 GB</strong> 空间。</p>
-    <p class="notice">完整包目前在私有仓库，需要有访问权限的 GitHub 账号。没有权限时，请向拥有者取得完整 ZIP。公开的更新包无法代替首次安装。</p>
-    <a class="button" href="install.html">查看完整安装步骤</a>
-    <p><a href="https://github.com/yinsn/FreeJot/releases/tag/v0.2.0">获取 0.2.0 完整包（需仓库权限）</a></p>
+    <p><strong>完整安装版 0.2.3 · 无需登录</strong>。下载下面全部四项，即可安装程序和两个模型，不必先装旧版。</p>
+    <a class="button" href="https://github.com/yinsn/FreeJot-Updates/releases/download/v0.2.3/FreeJot-Prepare-0.2.3-20260914-003359.zip">下载安装助手</a>
+    <p>还需下载全部三个分卷（这是同一个完整 ZIP，不能分别解压）：</p>
+    <ul>
+      <li><a href="https://github.com/yinsn/FreeJot-Updates/releases/download/v0.2.3/FreeJot-Offline-AppleSilicon-0.2.3-20260914-003359.zip.part01">下载分卷 1 / 3 · 1.90 GB</a></li>
+      <li><a href="https://github.com/yinsn/FreeJot-Updates/releases/download/v0.2.3/FreeJot-Offline-AppleSilicon-0.2.3-20260914-003359.zip.part02">下载分卷 2 / 3 · 1.90 GB</a></li>
+      <li><a href="https://github.com/yinsn/FreeJot-Updates/releases/download/v0.2.3/FreeJot-Offline-AppleSilicon-0.2.3-20260914-003359.zip.part03">下载分卷 3 / 3 · 约 1.57 GB</a></li>
+    </ul>
+    <p><a href="install.html">完整安装步骤</a> · <a href="install-sha256.txt">下载文件校验值</a> · <a href="https://github.com/yinsn/FreeJot-Updates/releases/tag/v0.2.3">本版全部附件</a></p>
     <ol>
       <li>下载 <strong>安装助手 ZIP + 全部 3 个分卷</strong>，放在同一文件夹。</li>
       <li>解压助手，运行「双击准备安装.command」，等待校验、合并和解压完成。</li>
       <li>把完整的 <strong>FreeJot.app</strong> 拖进「应用程序」，按指南校验全部模型。</li>
-      <li>用下方轻量更新器升级一次，再授予系统权限并试一次听写。</li>
+      <li>打开释手，授予系统权限，检查更新并试一次听写。</li>
     </ol>
     <p class="muted">若提示缺少 tokenizer.json（约 4.76 MB），请按指南检查完整包和复制结果。这个文件已包含在完整应用中。</p>
   </section>
@@ -47,7 +53,7 @@
   </section>
   <section class="card" id="agent" aria-labelledby="agent-title">
     <h2 id="agent-title">交给 agent 安装</h2>
-    <p>把这份<a href="INSTALL.md">安装指南（Markdown）</a>的链接交给 agent。文档包括下载权限、精确文件名、校验与安装命令、首次升级、故障处理和完成条件。</p>
+    <p>把这份<a href="INSTALL.md">安装指南（Markdown）</a>的链接交给 agent。文档包括公开下载直链、精确文件名、校验与安装命令、后续更新、故障处理和完成条件。</p>
     <p><a href="install.json">安装清单 JSON</a> · <a href="llms.txt">agent 读取入口</a> · <a href="verify-install.sh">只读校验脚本</a> · <a href="model-sha256.txt">配套模型校验清单</a></p>
     <p class="muted">文件安装通过后，系统权限仍需你在 Mac 上确认。只有实际录音、转写和自动输入成功，才算安装可用。</p>
   </section>

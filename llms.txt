@@ -1,13 +1,15 @@
 # 释手 / FreeJot
 
-> Local dictation for Apple Silicon Mac, macOS 14+. This site distributes installation instructions and program updates.
+> Local dictation for Apple Silicon Mac, macOS 14+. This site provides the complete installer, installation instructions, checksums and program updates. No login is required.
 
-- [Complete installation guide for users and agents](https://yinsn.github.io/FreeJot-Updates/INSTALL.md): Read before installing on a new Mac. Includes exact downloads, access requirements, commands, checksums, upgrade and acceptance steps.
+- [Complete installation guide for users and agents](https://yinsn.github.io/FreeJot-Updates/INSTALL.md): Read before installing on a new Mac. Includes public downloads, commands, checksums, updates and acceptance steps.
 - [Machine-readable installation manifest](https://yinsn.github.io/FreeJot-Updates/install.json): Pinned full installer version, four required assets, sizes, SHA256 and paths.
 - [Installation walkthrough](https://yinsn.github.io/FreeJot-Updates/install.html): Human-readable guide.
 - [Latest update feed](https://yinsn.github.io/FreeJot-Updates/app-update.json): Program updates only; requires an existing complete offline app.
 - [Read-only installation verification](https://yinsn.github.io/FreeJot-Updates/verify-install.sh): macOS built-in tools; requires adjacent model-sha256.txt.
 
-Fresh installation requires the complete offline package. A FreeJot-Update-*.zip of roughly 27 MB has no models and cannot install the product alone. The full 0.2.0 installer is about 5.37 GB compressed and is currently hosted in the private yinsn/FreeJot repository. Access requires an authorized GitHub account, or the owner can supply the identical full ZIP directly. Public access to this guide and to updates does not grant access to that installer. On 404/403, request access or the full ZIP; do not replace it with an update package or source archive.
+Fresh installation uses the complete offline 0.2.3 package: download the preparation helper plus all three parts from the public yinsn/FreeJot-Updates v0.2.3 Release. The complete download is about 5.37 GB. All exact URLs, sizes and hashes are in install.json. No GitHub account, token, private repository access or older installation is required. Use macOS built-in curl and ditto as documented. The helper verifies and reconstructs the complete signed app with both models. After installation, check for future updates in the app.
+
+A FreeJot-Update-*.zip of roughly 27 MB has no models and cannot install the product alone. On download errors, check current public links and connectivity; do not request credentials or fall back to a source ZIP or update package.
 
 The ASR tokenizer.json is 4,760,339 bytes and is included in the complete signed app. Do not insert a guessed tokenizer, edit signed model resources, disable security checks, or report success before permissions and actual dictation have been verified.
