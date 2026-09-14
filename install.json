@@ -9,46 +9,46 @@
     "freeDiskBytesForPreparation": 20000000000
   },
   "freshInstall": {
-    "version": "0.2.3",
-    "buildID": "20260914-003359",
+    "version": "0.2.4",
+    "buildID": "20260914-103027",
     "containsModels": true,
-    "releaseURL": "https://github.com/yinsn/FreeJot-Updates/releases/tag/v0.2.3",
+    "releaseURL": "https://github.com/yinsn/FreeJot-Updates/releases/tag/v0.2.4",
     "repository": "yinsn/FreeJot-Updates",
     "requiresAuthorizedGitHubAccount": false,
     "assets": [
       {
-        "name": "FreeJot-Offline-AppleSilicon-0.2.3-20260914-003359.zip.part01",
+        "name": "FreeJot-Offline-AppleSilicon-0.2.4-20260914-103027.zip.part01",
         "bytes": 1900000000,
-        "sha256": "b58428551f3635d8971289371f5da0430e30dede465febffdb0b07afd07a40b8",
-        "url": "https://github.com/yinsn/FreeJot-Updates/releases/download/v0.2.3/FreeJot-Offline-AppleSilicon-0.2.3-20260914-003359.zip.part01"
+        "sha256": "dfb9960b07c10998f270e5f60e5b1f3fb7a889b5263a06ee0b00691879050ece",
+        "url": "https://github.com/yinsn/FreeJot-Updates/releases/download/v0.2.4/FreeJot-Offline-AppleSilicon-0.2.4-20260914-103027.zip.part01"
       },
       {
-        "name": "FreeJot-Offline-AppleSilicon-0.2.3-20260914-003359.zip.part02",
+        "name": "FreeJot-Offline-AppleSilicon-0.2.4-20260914-103027.zip.part02",
         "bytes": 1900000000,
-        "sha256": "eda10ef52c7b0e3a253fcfca60addcecb977eea070d845fbefed43200688ab5f",
-        "url": "https://github.com/yinsn/FreeJot-Updates/releases/download/v0.2.3/FreeJot-Offline-AppleSilicon-0.2.3-20260914-003359.zip.part02"
+        "sha256": "572b190dbafdf9f12be0860dcd8a86bb6c35245dc09e37a9fd523d43d9f69d83",
+        "url": "https://github.com/yinsn/FreeJot-Updates/releases/download/v0.2.4/FreeJot-Offline-AppleSilicon-0.2.4-20260914-103027.zip.part02"
       },
       {
-        "name": "FreeJot-Offline-AppleSilicon-0.2.3-20260914-003359.zip.part03",
-        "bytes": 1567322762,
-        "sha256": "129d2337f8e084a9a72a3e56aa54b19825ddec2fb9443e4b8fb04b3c01f4ba13",
-        "url": "https://github.com/yinsn/FreeJot-Updates/releases/download/v0.2.3/FreeJot-Offline-AppleSilicon-0.2.3-20260914-003359.zip.part03"
+        "name": "FreeJot-Offline-AppleSilicon-0.2.4-20260914-103027.zip.part03",
+        "bytes": 1567321104,
+        "sha256": "8f28b75badd5d3df8f7fd60335423442f5ae7a1205af2592094647bd3fab8896",
+        "url": "https://github.com/yinsn/FreeJot-Updates/releases/download/v0.2.4/FreeJot-Offline-AppleSilicon-0.2.4-20260914-103027.zip.part03"
       },
       {
-        "name": "FreeJot-Prepare-0.2.3-20260914-003359.zip",
-        "bytes": 4533,
-        "sha256": "8e7639ff76c61d24268260f75ce422f332a3a1f1458d643a38107b235e485638",
-        "url": "https://github.com/yinsn/FreeJot-Updates/releases/download/v0.2.3/FreeJot-Prepare-0.2.3-20260914-003359.zip"
+        "name": "FreeJot-Prepare-0.2.4-20260914-103027.zip",
+        "bytes": 4532,
+        "sha256": "e0ff19733b45b13cb7ee854fd3b8bedbfd87530554fe0a5f6065b382effc81c2",
+        "url": "https://github.com/yinsn/FreeJot-Updates/releases/download/v0.2.4/FreeJot-Prepare-0.2.4-20260914-103027.zip"
       }
     ],
     "archive": {
-      "name": "FreeJot-Offline-AppleSilicon-0.2.3-20260914-003359.zip",
-      "bytes": 5367322762,
-      "sha256": "ba395de2a676f354795396799c670a59b71fe8300243d13c8993b6917fc01ac7",
-      "alternateTransferName": "FreeJot-Offline-0.2.3-AppleSilicon.zip"
+      "name": "FreeJot-Offline-AppleSilicon-0.2.4-20260914-103027.zip",
+      "bytes": 5367321104,
+      "sha256": "705feb1ae7db3c734a0048a6238f23257ce779285a77d03cc46e8278a5e20da5",
+      "alternateTransferName": "FreeJot-Offline-0.2.4-AppleSilicon.zip"
     },
-    "prepareHelper": "FreeJot-Prepare-0.2.3-20260914-003359/双击准备安装.command",
-    "preparedAppRelativePath": "FreeJot-Install-0.2.3-20260914-003359/FreeJot-Offline-AppleSilicon/FreeJot.app",
+    "prepareHelper": "FreeJot-Prepare-0.2.4-20260914-103027/双击准备安装.command",
+    "preparedAppRelativePath": "FreeJot-Install-0.2.4-20260914-103027/FreeJot-Offline-AppleSilicon/FreeJot.app",
     "ifDownloadFails": "Recheck the public homepage and manifest URLs, then network connectivity. No GitHub account or private repository access is needed. An update ZIP cannot replace the full installer."
   },
   "updates": {
@@ -56,7 +56,7 @@
     "requiresAuthorizedGitHubAccount": false,
     "containsModels": false,
     "requiresCompleteOfflineApp": true,
-    "afterFreshInstall": "The full 0.2.3 installer is ready to use. Check for newer releases in the app; no manual bridge update or same-version update download is required."
+    "afterFreshInstall": "The full 0.2.4 installer is ready to use. Check for newer releases in the app; no manual bridge update or same-version update download is required."
   },
   "verification": {
     "scriptURL": "https://yinsn.github.io/FreeJot-Updates/verify-install.sh",
@@ -68,8 +68,16 @@
     "completionRequires": [
       "Complete app and model verification passes",
       "Installed version matches selected update feed",
+      "Unsaved preferences default to rule cleanup, microphone onset protection on, and ribbon animation on; explicitly saved choices are preserved",
       "User grants macOS permissions",
       "A real dictation is transcribed and pasted into the target app"
     ]
+  },
+  "defaults": {
+    "appliesWhen": "The corresponding preference has not been explicitly saved. Preserve existing saved choices.",
+    "rewriteBackend": "off",
+    "rewriteModeLabel": "规则整理",
+    "microphoneStandbyEnabled": true,
+    "animateProcessingWithReducedMotion": true
   }
 }
