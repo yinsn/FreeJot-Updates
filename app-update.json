@@ -1,30 +1,30 @@
 {
-  "tag_name": "v0.2.2",
+  "tag_name": "v0.2.3",
   "draft": false,
   "prerelease": false,
-  "html_url": "https://github.com/yinsn/FreeJot-Updates/releases/tag/v0.2.2",
-  "body": "在软件里检查、下载、校验更新并自动重启\n复用本机模型，保留词典、历史和设置\n仅手动检查，不影响离线听写与快速规则整理\n0.2.1 及更早版本需手动安装本次更新，以后可在软件内更新",
+  "html_url": "https://github.com/yinsn/FreeJot-Updates/releases/tag/v0.2.3",
+  "body": "规则模式不加载整理模型，切回规则模式会释放模型内存\n取消过时的加载，快速开关不会留下旧模型\n重新开启智能整理后从本地加载，无需重新下载\n语音识别模型保持就绪，识别与文字整理效果不变",
   "assets": [
     {
-      "id": 561603211,
-      "name": "FreeJot-Update-0.2.2-AppleSilicon.zip",
-      "size": 26667012,
-      "digest": "sha256:769d796a9320cdc7b4dde6d7b455acf2ee3b97a758c7ad4e0fae1cfce73d0af1",
-      "browser_download_url": "https://github.com/yinsn/FreeJot-Updates/releases/download/v0.2.2/FreeJot-Update-0.2.2-AppleSilicon.zip"
+      "id": 562216742,
+      "name": "FreeJot-Update-0.2.3-AppleSilicon.zip",
+      "size": 26697875,
+      "digest": "sha256:e60ecd4e2b26767c080d08d2e4ea5c8499643615d7c3ef22aed63ced343d1046",
+      "browser_download_url": "https://github.com/yinsn/FreeJot-Updates/releases/download/v0.2.3/FreeJot-Update-0.2.3-AppleSilicon.zip"
     },
     {
-      "id": 561603207,
+      "id": 562216745,
       "name": "SHA256SUMS",
       "size": 187,
-      "digest": "sha256:cd65a4d4557e95611090739a59c1bdc1f1d62fdfad4856eed0e0d701b04bae29",
-      "browser_download_url": "https://github.com/yinsn/FreeJot-Updates/releases/download/v0.2.2/SHA256SUMS"
+      "digest": "sha256:c97d70a135f227a4fc0d3188131b9bffd090ec27cb82d8a1882e34472e2b717c",
+      "browser_download_url": "https://github.com/yinsn/FreeJot-Updates/releases/download/v0.2.3/SHA256SUMS"
     },
     {
-      "id": 561603206,
+      "id": 562216748,
       "name": "UPDATE.zh-CN.txt",
-      "size": 1905,
-      "digest": "sha256:725fd23078aa7c1ff1c4df69baf8225b80e477f8b3135da3224aca3391192a0b",
-      "browser_download_url": "https://github.com/yinsn/FreeJot-Updates/releases/download/v0.2.2/UPDATE.zh-CN.txt"
+      "size": 1935,
+      "digest": "sha256:e2a5ac42cb20a905b16a4a5f6c997456b18be8ae7a7b57589efabd1c2e677c10",
+      "browser_download_url": "https://github.com/yinsn/FreeJot-Updates/releases/download/v0.2.3/UPDATE.zh-CN.txt"
     }
   ]
 }
