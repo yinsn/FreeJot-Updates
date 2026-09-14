@@ -56,7 +56,7 @@
     "requiresAuthorizedGitHubAccount": false,
     "containsModels": false,
     "requiresCompleteOfflineApp": true,
-    "afterFreshInstall": "The full 0.2.4 installer is ready to use. Check for newer releases in the app; no manual bridge update or same-version update download is required."
+    "afterFreshInstall": "Install the complete 0.2.4 package, then use the in-app update check to upgrade to the current 0.2.5 release. The update reuses the installed models; no manual bridge is required."
   },
   "verification": {
     "scriptURL": "https://yinsn.github.io/FreeJot-Updates/verify-install.sh",
@@ -78,6 +78,8 @@
     "rewriteBackend": "off",
     "rewriteModeLabel": "规则整理",
     "microphoneStandbyEnabled": true,
-    "animateProcessingWithReducedMotion": true
+    "animateProcessingWithReducedMotion": true,
+    "microphoneDeviceUID": "",
+    "microphoneSelection": "Automatic: prefer supported external wired inputs, then built-in input. Bluetooth requires explicit selection on each Mac and disables idle microphone standby."
   }
 }
