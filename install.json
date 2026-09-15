@@ -56,7 +56,7 @@
     "requiresAuthorizedGitHubAccount": false,
     "containsModels": false,
     "requiresCompleteOfflineApp": true,
-    "afterFreshInstall": "Install the complete 0.2.4 package, then use the in-app update check to upgrade to the current 0.2.8 release. The update reuses the installed models; no manual bridge is required."
+    "afterFreshInstall": "Install the complete 0.2.4 package, then use the in-app update check to upgrade to the current 0.2.9 release. The update reuses the installed models; no manual bridge is required."
   },
   "verification": {
     "scriptURL": "https://yinsn.github.io/FreeJot-Updates/verify-install.sh",
@@ -83,6 +83,6 @@
     "microphoneDeviceUID": "",
     "microphoneSelection": "Automatic: prefer supported external wired inputs, then built-in input. Bluetooth requires explicit selection on each Mac and follows the microphone onset protection setting.",
     "systemMicrophoneLockEnabled": false,
-    "systemMicrophoneLock": "Opt in separately on each Mac. While FreeJot runs, keep system default input on the selected local microphone. This does not block applications that explicitly choose another input."
+    "systemMicrophoneLock": "Opt in separately on each Mac. While FreeJot runs, keep system default input on the selected local microphone, preserving playback across input transitions. Pause input enforcement if restoring playback conflicts with it. Use the Sound Playback picker to recover an already displaced output. This does not block applications that explicitly choose another input."
   }
 }
