@@ -56,7 +56,7 @@
     "requiresAuthorizedGitHubAccount": false,
     "containsModels": false,
     "requiresCompleteOfflineApp": true,
-    "afterFreshInstall": "Install the complete 0.2.4 package, then use the in-app update check to upgrade to the current 0.2.6 release. The update reuses the installed models; no manual bridge is required."
+    "afterFreshInstall": "Install the complete 0.2.4 package, then use the in-app update check to upgrade to the current 0.2.7 release. The update reuses the installed models; no manual bridge is required."
   },
   "verification": {
     "scriptURL": "https://yinsn.github.io/FreeJot-Updates/verify-install.sh",
@@ -70,7 +70,8 @@
       "Installed version matches selected update feed",
       "Unsaved preferences default to rule cleanup, microphone onset protection on, and ribbon animation on; explicitly saved choices are preserved",
       "User grants macOS permissions",
-      "A real dictation is transcribed and pasted into the target app"
+      "A real dictation is transcribed and pasted into the target app",
+      "When system microphone locking is enabled, verify its device name and active status. Test the actual microphone/headphone combination on the target Mac; do not infer hardware compatibility from package checks."
     ]
   },
   "defaults": {
@@ -80,6 +81,8 @@
     "microphoneStandbyEnabled": true,
     "animateProcessingWithReducedMotion": true,
     "microphoneDeviceUID": "",
-    "microphoneSelection": "Automatic: prefer supported external wired inputs, then built-in input. Bluetooth requires explicit selection on each Mac and disables idle microphone standby."
+    "microphoneSelection": "Automatic: prefer supported external wired inputs, then built-in input. Bluetooth requires explicit selection on each Mac and follows the microphone onset protection setting.",
+    "systemMicrophoneLockEnabled": false,
+    "systemMicrophoneLock": "Opt in separately on each Mac. While FreeJot runs, keep system default input on the selected local microphone. This does not block applications that explicitly choose another input."
   }
 }
