@@ -1,5 +1,5 @@
 #!/bin/zsh -f
-# Read-only validation of the complete offline model set shared by 0.2.0–0.2.12.
+# Read-only validation of the complete offline model set shared by 0.2.0–0.2.13.
 # Keep model-sha256.txt beside this script. No downloads, installs, or repair.
 set -euo pipefail
 fail() { print -u2 -- "校验未通过：$*"; exit 1; }
