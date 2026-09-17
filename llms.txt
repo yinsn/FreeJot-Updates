@@ -8,7 +8,7 @@
 - [Latest update feed](https://yinsn.github.io/FreeJot-Updates/app-update.json): Program updates only; requires an existing complete offline app.
 - [Read-only installation verification](https://yinsn.github.io/FreeJot-Updates/verify-install.sh): macOS built-in tools; requires adjacent model-sha256.txt.
 
-Fresh installation uses the complete offline 0.2.4 package: download the preparation helper plus all three parts from the public yinsn/FreeJot-Updates v0.2.4 Release. The complete download is about 5.37 GB. All exact URLs, sizes and hashes are in install.json. No GitHub account, token, private repository access or older installation is required. Use macOS built-in curl and ditto as documented. The helper verifies and reconstructs the complete signed app with both models. After installation, use the in-app update check to upgrade to the current 0.2.13 release, reusing the installed models.
+Fresh installation uses the complete offline 0.2.4 package: download the preparation helper plus all three parts from the public yinsn/FreeJot-Updates v0.2.4 Release. The complete download is about 5.37 GB. All exact URLs, sizes and hashes are in install.json. No GitHub account, token, private repository access or older installation is required. Use macOS built-in curl and ditto as documented. The helper verifies and reconstructs the complete signed app with both models. After installation, use the in-app update check to upgrade to the current 0.2.14 release, reusing the installed models.
 
 A FreeJot-Update-*.zip of roughly 27 MB has no models and cannot install the product alone. On download errors, check current public links and connectivity; do not request credentials or fall back to a source ZIP or update package.
 
