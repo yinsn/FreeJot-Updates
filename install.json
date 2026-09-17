@@ -56,7 +56,7 @@
     "requiresAuthorizedGitHubAccount": false,
     "containsModels": false,
     "requiresCompleteOfflineApp": true,
-    "afterFreshInstall": "Install the complete 0.2.4 package, then use the in-app update check to upgrade to the current 0.2.14 release. The update reuses the installed models; no manual bridge is required."
+    "afterFreshInstall": "Install the complete 0.2.4 package, then use the in-app update check to upgrade to the current 0.2.15 release. The update reuses the installed models; no manual bridge is required."
   },
   "verification": {
     "scriptURL": "https://yinsn.github.io/FreeJot-Updates/verify-install.sh",
