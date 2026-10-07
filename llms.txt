@@ -12,6 +12,6 @@ Fresh installation uses the complete offline 0.2.4 package: download the prepara
 
 A FreeJot-Update-*.zip of roughly 27 MB has no models and cannot install the product alone. On download errors, check current public links and connectivity; do not request credentials or fall back to a source ZIP or update package.
 
-FreeJotInput-X.Y.Z-AppleSilicon.zip (from 0.3.0) is an optional native pinyin input method bundle with a freejot-lexicon import tool; it is installed manually into ~/Library/Input Methods and enabled in System Settings, and is not part of the in-app update.
+FreeJotInput-X.Y.Z-AppleSilicon.zip (from 0.3.0) is an optional native pinyin input method bundle with a freejot-lexicon import tool; it is installed manually into ~/Library/Input Methods and enabled in System Settings, and is not part of the in-app update. From 0.3.1 the same input method is embedded in FreeJot.app and installed automatically after an in-app update; the zip remains a manual fallback.
 
 The ASR tokenizer.json is 4,760,339 bytes and is included in the complete signed app. Do not insert a guessed tokenizer, edit signed model resources, disable security checks, or report success before permissions and actual dictation have been verified.
