@@ -1,9 +1,9 @@
 {
-  "url": "https://api.github.com/repos/yinsn/FreeJot-Updates/releases/423521765",
-  "assets_url": "https://api.github.com/repos/yinsn/FreeJot-Updates/releases/423521765/assets",
-  "upload_url": "https://uploads.github.com/repos/yinsn/FreeJot-Updates/releases/423521765/assets{?name,label}",
-  "html_url": "https://github.com/yinsn/FreeJot-Updates/releases/tag/v0.4.8",
-  "id": 423521765,
+  "url": "https://api.github.com/repos/yinsn/FreeJot-Updates/releases/423550729",
+  "assets_url": "https://api.github.com/repos/yinsn/FreeJot-Updates/releases/423550729/assets",
+  "upload_url": "https://uploads.github.com/repos/yinsn/FreeJot-Updates/releases/423550729/assets{?name,label}",
+  "html_url": "https://github.com/yinsn/FreeJot-Updates/releases/tag/v0.4.9",
+  "id": 423550729,
   "author": {
     "login": "yinsn",
     "id": 102125674,
@@ -25,22 +25,22 @@
     "user_view_type": "public",
     "site_admin": false
   },
-  "node_id": "RE_kwDOUZPJh84ZPm3l",
-  "tag_name": "v0.4.8",
+  "node_id": "RE_kwDOUZPJh84ZPt8J",
+  "tag_name": "v0.4.9",
   "target_commitish": "main",
-  "name": "释手 0.4.8 · 修复输入位置识别与通用上屏",
+  "name": "释手 0.4.9 · 恢复稳定自动上屏",
   "draft": false,
   "immutable": false,
   "prerelease": false,
-  "created_at": "2026-10-25T04:47:07Z",
-  "updated_at": "2026-10-25T16:32:31Z",
-  "published_at": "2026-10-25T16:32:31Z",
+  "created_at": "2026-10-25T16:33:17Z",
+  "updated_at": "2026-10-25T17:26:50Z",
+  "published_at": "2026-10-25T17:26:50Z",
   "assets": [
     {
-      "url": "https://api.github.com/repos/yinsn/FreeJot-Updates/releases/assets/675539428",
-      "id": 675539428,
-      "node_id": "RA_kwDOUZPJh84oQ-nk",
-      "name": "FreeJot-Update-0.4.8-AppleSilicon.zip",
+      "url": "https://api.github.com/repos/yinsn/FreeJot-Updates/releases/assets/675663447",
+      "id": 675663447,
+      "node_id": "RA_kwDOUZPJh84oRc5X",
+      "name": "FreeJot-Update-0.4.9-AppleSilicon.zip",
       "label": "",
       "uploader": {
         "login": "yinsn",
@@ -65,17 +65,17 @@
       },
       "content_type": "application/zip",
       "state": "uploaded",
-      "size": 70941262,
-      "digest": "sha256:a94a015c57c6514809cc4df8d2acdc36b252d872f9193cad980a57ae12f29178",
+      "size": 70958291,
+      "digest": "sha256:f7579b122907a4d1c38a81a513ac3df967a24d216a96b07cf18ff982c75b35cb",
       "download_count": 0,
-      "created_at": "2026-10-25T16:32:23Z",
-      "updated_at": "2026-10-25T16:32:30Z",
-      "browser_download_url": "https://github.com/yinsn/FreeJot-Updates/releases/download/v0.4.8/FreeJot-Update-0.4.8-AppleSilicon.zip"
+      "created_at": "2026-10-25T17:26:42Z",
+      "updated_at": "2026-10-25T17:26:49Z",
+      "browser_download_url": "https://github.com/yinsn/FreeJot-Updates/releases/download/v0.4.9/FreeJot-Update-0.4.9-AppleSilicon.zip"
     },
     {
-      "url": "https://api.github.com/repos/yinsn/FreeJot-Updates/releases/assets/675539434",
-      "id": 675539434,
-      "node_id": "RA_kwDOUZPJh84oQ-nq",
+      "url": "https://api.github.com/repos/yinsn/FreeJot-Updates/releases/assets/675663449",
+      "id": 675663449,
+      "node_id": "RA_kwDOUZPJh84oRc5Z",
       "name": "FreeJot-WikipediaPairs-zhwiki-20261001.zip",
       "label": "",
       "uploader": {
@@ -104,15 +104,15 @@
       "size": 15211057,
       "digest": "sha256:0e7936089c1406d3a7eb7ec4fe365570daa379fe8d6d64ed47f8a4e61a958220",
       "download_count": 0,
-      "created_at": "2026-10-25T16:32:23Z",
-      "updated_at": "2026-10-25T16:32:25Z",
-      "browser_download_url": "https://github.com/yinsn/FreeJot-Updates/releases/download/v0.4.8/FreeJot-WikipediaPairs-zhwiki-20261001.zip"
+      "created_at": "2026-10-25T17:26:42Z",
+      "updated_at": "2026-10-25T17:26:44Z",
+      "browser_download_url": "https://github.com/yinsn/FreeJot-Updates/releases/download/v0.4.9/FreeJot-WikipediaPairs-zhwiki-20261001.zip"
     },
     {
-      "url": "https://api.github.com/repos/yinsn/FreeJot-Updates/releases/assets/675539431",
-      "id": 675539431,
-      "node_id": "RA_kwDOUZPJh84oQ-nn",
-      "name": "FreeJotInput-0.4.8-AppleSilicon.zip",
+      "url": "https://api.github.com/repos/yinsn/FreeJot-Updates/releases/assets/675663452",
+      "id": 675663452,
+      "node_id": "RA_kwDOUZPJh84oRc5c",
+      "name": "FreeJotInput-0.4.9-AppleSilicon.zip",
       "label": "",
       "uploader": {
         "login": "yinsn",
@@ -137,17 +137,17 @@
       },
       "content_type": "application/zip",
       "state": "uploaded",
-      "size": 20618861,
-      "digest": "sha256:cf0e84980a3efee8665346731b8dc303706d3670661f015eb8d9c224c561b053",
+      "size": 20618780,
+      "digest": "sha256:089a0349e9cf105b5f811c6e1ef8fbf6c9e3564e35d1c39c12b27a9c368fc08f",
       "download_count": 0,
-      "created_at": "2026-10-25T16:32:23Z",
-      "updated_at": "2026-10-25T16:32:25Z",
-      "browser_download_url": "https://github.com/yinsn/FreeJot-Updates/releases/download/v0.4.8/FreeJotInput-0.4.8-AppleSilicon.zip"
+      "created_at": "2026-10-25T17:26:42Z",
+      "updated_at": "2026-10-25T17:26:45Z",
+      "browser_download_url": "https://github.com/yinsn/FreeJot-Updates/releases/download/v0.4.9/FreeJotInput-0.4.9-AppleSilicon.zip"
     },
     {
-      "url": "https://api.github.com/repos/yinsn/FreeJot-Updates/releases/assets/675539427",
-      "id": 675539427,
-      "node_id": "RA_kwDOUZPJh84oQ-nj",
+      "url": "https://api.github.com/repos/yinsn/FreeJot-Updates/releases/assets/675663448",
+      "id": 675663448,
+      "node_id": "RA_kwDOUZPJh84oRc5Y",
       "name": "SHA256SUMS",
       "label": "",
       "uploader": {
@@ -174,16 +174,16 @@
       "content_type": "application/octet-stream",
       "state": "uploaded",
       "size": 315,
-      "digest": "sha256:0a5c1f1973fd5fd7768299279ae219a6071c3ac23a99ca7a040fbc740df4e995",
+      "digest": "sha256:6c25b311e771c1f94f34a2a98306376de575a99e73b96ccb88badef3a159a686",
       "download_count": 0,
-      "created_at": "2026-10-25T16:32:23Z",
-      "updated_at": "2026-10-25T16:32:23Z",
-      "browser_download_url": "https://github.com/yinsn/FreeJot-Updates/releases/download/v0.4.8/SHA256SUMS"
+      "created_at": "2026-10-25T17:26:42Z",
+      "updated_at": "2026-10-25T17:26:42Z",
+      "browser_download_url": "https://github.com/yinsn/FreeJot-Updates/releases/download/v0.4.9/SHA256SUMS"
     },
     {
-      "url": "https://api.github.com/repos/yinsn/FreeJot-Updates/releases/assets/675539433",
-      "id": 675539433,
-      "node_id": "RA_kwDOUZPJh84oQ-np",
+      "url": "https://api.github.com/repos/yinsn/FreeJot-Updates/releases/assets/675663446",
+      "id": 675663446,
+      "node_id": "RA_kwDOUZPJh84oRc5W",
       "name": "UPDATE.zh-CN.txt",
       "label": "",
       "uploader": {
@@ -209,15 +209,15 @@
       },
       "content_type": "text/plain; charset=utf-8",
       "state": "uploaded",
-      "size": 969,
-      "digest": "sha256:a3e829e3a661862df048eef5ec572450e4608db2bf17fd26d5102684d32fce3e",
+      "size": 978,
+      "digest": "sha256:bb2ad976d3df91f9bab78f9093495da7a29fe595e6d10bf056736ea9af37ba8d",
       "download_count": 0,
-      "created_at": "2026-10-25T16:32:23Z",
-      "updated_at": "2026-10-25T16:32:23Z",
-      "browser_download_url": "https://github.com/yinsn/FreeJot-Updates/releases/download/v0.4.8/UPDATE.zh-CN.txt"
+      "created_at": "2026-10-25T17:26:42Z",
+      "updated_at": "2026-10-25T17:26:42Z",
+      "browser_download_url": "https://github.com/yinsn/FreeJot-Updates/releases/download/v0.4.9/UPDATE.zh-CN.txt"
     }
   ],
-  "tarball_url": "https://api.github.com/repos/yinsn/FreeJot-Updates/tarball/v0.4.8",
-  "zipball_url": "https://api.github.com/repos/yinsn/FreeJot-Updates/zipball/v0.4.8",
-  "body": "# 释手 0.4.8\n\n本次修正已识别出文字，却提示“无法确认输入位置，已复制”的上屏兼容问题。\n\n- 自定义编辑器和 UU 远程画面不必提供光标位置、选区及全文长度，也能在核对当前窗口和焦点后尝试直接上屏。\n- App 无法提供可调用的原生“粘贴”菜单时，改用一次完整的 Command-V，不再仅因菜单不可读取而停止输入。\n- 适当增加输入目标检查的等待时间，减少电脑忙碌时的误判；能够正常响应的 App 不额外等待。\n- 仍按结束录音时的位置输入；结束后切换 App、窗口或输入框，以及继续操作键鼠时停止自动回填。明确禁用的粘贴命令、已发出但结果不明的粘贴动作不会触发重复输入。\n- UU 保留可调的剪贴板同步等待；语音模型、F16／脚踏板和个人词库沿用，无需重新下载模型。\n\n在「设置 → 关于释手 → 检查更新」升级即可。\n"
+  "tarball_url": "https://api.github.com/repos/yinsn/FreeJot-Updates/tarball/v0.4.9",
+  "zipball_url": "https://api.github.com/repos/yinsn/FreeJot-Updates/zipball/v0.4.9",
+  "body": "# 释手 0.4.9\n\n本次修正 0.4.4 起自动上屏过度依赖输入位置检测的问题。\n\n- 结束录音时，先记住当前 App 和窗口。即使 App 暂时不提供光标、选区或辅助功能信息，仍可向这个未改变的目标请求粘贴。\n- 输入框提供的信息用于进一步核对和补齐段落标点；缺少这些信息不再直接取消整次上屏。\n- 窗口定位排除标题栏里的附属小控件，避免把它们误当成真正的输入窗口。\n- 等待结果期间，切换 App 或窗口仍会停止自动输入。即使另一个 App 自行激活后又切回，也不会把旧结果重新送入。\n- 继续保留已识别的安全输入框、禁用粘贴命令、剪贴板文字变化及重复输入保护。已经发出的粘贴不会因结果不明而再次发送。\n- 语音识别、模型、F16／脚踏板、词典和历史记录沿用，无需重新下载模型。\n\n在「设置 → 关于释手 → 检查更新」升级即可。\n"
 }
