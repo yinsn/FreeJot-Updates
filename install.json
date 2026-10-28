@@ -56,7 +56,7 @@
     "requiresAuthorizedGitHubAccount": false,
     "containsModels": false,
     "requiresCompleteOfflineApp": true,
-    "afterFreshInstall": "Install the complete 0.2.4 package, then use the in-app update check to upgrade to the current 0.4.11 release. The update reuses the installed models; no manual bridge is required."
+    "afterFreshInstall": "Install the complete 0.2.4 package, then use the in-app update check to upgrade to the current 0.4.12 release. The update reuses the installed models; no manual bridge is required."
   },
   "verification": {
     "scriptURL": "https://yinsn.github.io/FreeJot-Updates/verify-install.sh",
@@ -84,6 +84,9 @@
     "microphoneSelection": "Automatic: prefer available supported external inputs, including Bluetooth, Bluetooth LE and USB, then built-in input. Among available external inputs, prefer the current system default. Reevaluate after disconnection or reconnection and refresh standby when a Bluetooth input becomes ready later. Explicitly selected devices remain per-Mac choices and report disconnection instead of silently falling back. Bluetooth follows the microphone onset protection setting.",
     "systemMicrophoneLockEnabled": false,
     "systemMicrophoneLock": "Opt in separately on each Mac. While FreeJot runs, keep system default input on the selected local microphone. In automatic mode, retain an already selected external input while it remains available; after disconnection choose an available external input before built-in input, and promote a reconnected external input once ready if the current selection has fallen back to built-in input. A still-available pinned external input remains selected when another external input reconnects. Pause input enforcement if restoring playback conflicts with it. This does not block applications that explicitly choose another input.",
-    "playbackProtection": "For supported external wired microphones, preserve the last known, still available independent speaker or headphone output even when system microphone locking is off. The Sound Playback picker remains available. If FreeJot starts with a displaced output and has no prior playback baseline, explicitly choose the desired speaker or headphones once; FreeJot does not guess. An explicit microphone monitoring choice in this picker is preserved."
+    "playbackProtection": "For supported external wired microphones, preserve the last known, still available independent speaker or headphone output even when system microphone locking is off. The Sound Playback picker remains available. If FreeJot starts with a displaced output and has no prior playback baseline, explicitly choose the desired speaker or headphones once; FreeJot does not guess. An explicit microphone monitoring choice in this picker is preserved.",
+    "completedHistoryRetention": "200 completed entries globally after voice sync; local original recordings follow the same history window. Drafts, the current undo snapshot and saved correction samples are retained separately.",
+    "voiceRecordSync": "Off by default, separate from dictionary sync. Opt in under Correction Memory after all participating Macs have upgraded to 0.4.12. The selected dictionary folder then transfers history text, original audio, corrections and dataset-selection flags.",
+    "correctionDataset": "Not selected by default. Only explicitly selected, reviewed, audio-backed samples are exported for training."
   }
 }
