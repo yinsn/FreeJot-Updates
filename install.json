@@ -56,7 +56,7 @@
     "requiresAuthorizedGitHubAccount": false,
     "containsModels": false,
     "requiresCompleteOfflineApp": true,
-    "afterFreshInstall": "Install the complete 0.2.4 package, then use the in-app update check to upgrade to the current 0.4.14 release. The update reuses the installed models; no manual bridge is required."
+    "afterFreshInstall": "Install the complete 0.2.4 package, then use the in-app update check to upgrade to the current 0.4.15 release. The update reuses the installed models; no manual bridge is required."
   },
   "verification": {
     "scriptURL": "https://yinsn.github.io/FreeJot-Updates/verify-install.sh",
@@ -87,6 +87,8 @@
     "playbackProtection": "For supported external wired microphones, preserve the last known, still available independent speaker or headphone output even when system microphone locking is off. The Sound Playback picker remains available. If FreeJot starts with a displaced output and has no prior playback baseline, explicitly choose the desired speaker or headphones once; FreeJot does not guess. An explicit microphone monitoring choice in this picker is preserved.",
     "completedHistoryRetention": "200 completed entries globally after voice sync; local original recordings follow the same history window. Drafts, the current undo snapshot and saved correction samples are retained separately.",
     "voiceRecordSync": "Off by default, separate from dictionary sync. Opt in under Correction Memory after all participating Macs have upgraded to 0.4.12. The selected dictionary folder then transfers history text, original audio, corrections and dataset-selection flags.",
-    "correctionDataset": "Not selected by default. Only explicitly selected, reviewed, audio-backed samples are exported for training."
+    "correctionDataset": "Not selected by default. Only explicitly selected, reviewed, audio-backed samples are exported for training.",
+    "inputMethodLearningSync": "With dictionary sync and input-method lexicon sync enabled, Chinese selection counts add across devices once per origin and reset epoch. Recency stays per-Mac; three-column word frequency still uses maximum. All participating Macs should run 0.4.15 or later.",
+    "inputMethodBackgroundSync": "Uses the same existing switches and selected shared folder. A bundled macOS background agent checks approximately every 15 minutes after the host quits, subject to system approval/scheduling. Disabling either switch stops background synchronization. No speech models are loaded by the helper."
   }
 }
