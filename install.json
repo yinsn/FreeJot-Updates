@@ -56,7 +56,7 @@
     "requiresAuthorizedGitHubAccount": false,
     "containsModels": false,
     "requiresCompleteOfflineApp": true,
-    "afterFreshInstall": "Install the complete 0.2.4 package, then use the in-app update check to upgrade to the current 0.4.19 release. The update reuses the installed models; no manual bridge is required."
+    "afterFreshInstall": "Install the complete 0.2.4 package, then use the in-app update check to upgrade to the current 0.4.20 release. The update reuses the installed models; no manual bridge is required."
   },
   "verification": {
     "scriptURL": "https://yinsn.github.io/FreeJot-Updates/verify-install.sh",
@@ -90,6 +90,8 @@
     "correctionDataset": "Not selected by default. Only explicitly selected, reviewed, audio-backed samples are exported for training.",
     "inputMethodLearningSync": "With dictionary sync and input-method lexicon sync enabled, Chinese selection counts add across devices once per origin and reset epoch. Recency stays per-Mac; three-column word frequency still uses maximum. All participating Macs should run 0.4.15 or later.",
     "inputMethodBackgroundSync": "Uses the same existing switches and selected shared folder. A bundled macOS background agent checks approximately every 15 minutes after the host quits, subject to system approval/scheduling. Disabling either switch stops background synchronization. No speech models are loaded by the helper.",
-    "dailyInputStatistics": "From 0.4.19, count newly completed dictation output (including clipboard fallback), excluding whitespace, punctuation, symbols, drafts, failures, and history reprocessing. Statistics sync is enabled by default and reuses the enabled dictionary folder, or a separately selected shared iCloud Drive folder. Sync only per-device daily counts and device names; no transcript or audio. All participating Macs must upgrade. Same local calendar dates are summed; cloud delivery is asynchronous."
+    "dailyInputStatistics": "From 0.4.19, count newly completed dictation output (including clipboard fallback), excluding whitespace, punctuation, symbols, drafts, failures, and history reprocessing. Statistics sync is enabled by default and reuses the enabled dictionary folder, or a separately selected shared iCloud Drive folder. Sync only per-device daily counts and device names; no transcript or audio. All participating Macs must upgrade. Same local calendar dates are summed; cloud delivery is asynchronous.",
+    "lifetimeInputStatistics": "From 0.4.20, the all-time total includes all daily counts recorded since 0.4.19 for this Mac and the devices included in the current statistics sync group.",
+    "personalDictionaryOrder": "The personal dictionary and search results use A–Z order, with Mandarin pinyin for Chinese words. Adding a word opens its page."
   }
 }
