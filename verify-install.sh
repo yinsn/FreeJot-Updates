@@ -1,5 +1,5 @@
 #!/bin/zsh -f
-# Read-only validation of the complete offline model set shared by 0.2.0–0.2.24.
+# Validate the offline models shared by the original 0.2.0 bundle and its lightweight updates.
 # Keep model-sha256.txt beside this script. No downloads, installs, or repair.
 set -euo pipefail
 fail() { print -u2 -- "校验未通过：$*"; exit 1; }
@@ -20,6 +20,6 @@ task_tokenizer="$task_models/asr/qwen3-asr-1.7b-bf16/tokenizer.json"
 print -- '正在逐项校验全部模型和清单，约需读取 6.4 GB…'
 (cd "$task_models" && /usr/bin/shasum -a 256 -c "$task_checksums") || fail '模型文件缺失、损坏或属于另一组模型。请核对完整安装版本。'
 task_version=$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' "$task_app/Contents/Info.plist")
-task_build=$(/usr/libexec/PlistBuddy -c 'Print :FreeJotBuildID' "$task_app/Contents/Info.plist")
+task_build=$(/usr/libexec/PlistBuddy -c 'Print :FreeJotBuildID' "$task_app/Contents/Info.plist" 2>/dev/null || print -r -- '旧版')
 print -- "文件校验通过：FreeJot $task_version · $task_build"
 print -- '还需在目标 Mac 授予系统权限，并完成一次真实听写和自动输入，才能确认安装可用。'

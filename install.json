@@ -56,7 +56,7 @@
     "requiresAuthorizedGitHubAccount": false,
     "containsModels": false,
     "requiresCompleteOfflineApp": true,
-    "afterFreshInstall": "Install the complete 0.2.4 package, then use the in-app update check to upgrade to the current 0.4.20 release. The update reuses the installed models; no manual bridge is required."
+    "afterFreshInstall": "Install the complete 0.2.4 package, then use the in-app update check to upgrade to the current 0.4.21 release. The update reuses the installed models; no manual bridge is required."
   },
   "verification": {
     "scriptURL": "https://yinsn.github.io/FreeJot-Updates/verify-install.sh",
@@ -86,7 +86,7 @@
     "systemMicrophoneLock": "Opt in separately on each Mac. While FreeJot runs, keep system default input on the selected local microphone. In automatic mode, retain an already selected external input while it remains available; after disconnection choose an available external input before built-in input, and promote a reconnected external input once ready if the current selection has fallen back to built-in input. A still-available pinned external input remains selected when another external input reconnects. Pause input enforcement if restoring playback conflicts with it. This does not block applications that explicitly choose another input.",
     "playbackProtection": "For supported external wired microphones, preserve the last known, still available independent speaker or headphone output even when system microphone locking is off. The Sound Playback picker remains available. If FreeJot starts with a displaced output and has no prior playback baseline, explicitly choose the desired speaker or headphones once; FreeJot does not guess. An explicit microphone monitoring choice in this picker is preserved.",
     "completedHistoryRetention": "200 completed entries globally after voice sync; local original recordings follow the same history window. Drafts, the current undo snapshot and saved correction samples are retained separately.",
-    "voiceRecordSync": "Off by default, separate from dictionary sync. Opt in under Correction Memory after all participating Macs have upgraded to 0.4.12. The selected dictionary folder then transfers history text, original audio, corrections and dataset-selection flags.",
+    "voiceRecordSync": "Off by default, separate from dictionary sync. Opt in under Correction Memory after all participating Macs have upgraded to the current release (0.4.21 uses manifest format v2). The selected dictionary folder then transfers history text, original audio, corrections and dataset-selection flags.",
     "correctionDataset": "Not selected by default. Only explicitly selected, reviewed, audio-backed samples are exported for training.",
     "inputMethodLearningSync": "With dictionary sync and input-method lexicon sync enabled, Chinese selection counts add across devices once per origin and reset epoch. Recency stays per-Mac; three-column word frequency still uses maximum. All participating Macs should run 0.4.15 or later.",
     "inputMethodBackgroundSync": "Uses the same existing switches and selected shared folder. A bundled macOS background agent checks approximately every 15 minutes after the host quits, subject to system approval/scheduling. Disabling either switch stops background synchronization. No speech models are loaded by the helper.",
